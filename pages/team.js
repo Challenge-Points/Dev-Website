@@ -3,26 +3,49 @@ import Image from "next/Image";
 import TeamMember from "../components/TeamMember";
 
 const Team = () => {
-	var devs = [
-		{ pfpURL: "Aso.gif", userID: "580425653325791272" },
-		{ pfpURL: "ThiJNmEnS.png", userID: "490534335884165121" },
-		{ pfpURL: "ActuallyThatsWrong.png", userID: "580425653325791272" },
-		{ pfpURL: "Lauriethefish.png", userID: "580425653325791272" },
-		{ pfpURL: "Sirspam.png", userID: "490534335884165121" },
-	];
+	var team = {
+		devs: [
+			{ pfpURL: "Aso.gif", userID: "" },
+			{ pfpURL: "ThiJNmEnS.png", userID: "" },
+			{ pfpURL: "ActuallyThatsWrong.png", userID: "" },
+			{ pfpURL: "Lauriethefish.png", userID: "" },
+			{ pfpURL: "Sirspam.png", userID: "" },
+			{ pfpURL: "アニメのくわ.png", userID: "" },
+		],
+		rankingTeam: [
+			{ pfpURL: "Owotsu.png", userID: "" },
+			{ pfpURL: "Abstr4kt.png", userID: "" },
+			{ pfpURL: "Clock.png", userID: "" },
+			{ pfpURL: "Flaime.png", userID: "" },
+			{ pfpURL: "Galaxy99.png", userID: "" },
+			{ pfpURL: "Hairclip.png", userID: "" },
+			{ pfpURL: "HELO.png", userID: "" },
+			{ pfpURL: "MasterSlayer379.gif", userID: "" },
+			{ pfpURL: "Phytotitan_10.png", userID: "" },
+			{ pfpURL: "Plasim.png", userID: "" },
+			{ pfpURL: "Salad.png", userID: "" },
+		],
+		honderableMentions: [{ pfpURL: "LicensedCrime.png", userID: "" }],
+	};
 
 	return (
 		<div>
 			<h1>Team</h1>
 			<h2>Developers</h2>
 			<tbody>
-				{devs.map((dev) => {
-					return <TeamMember pfpURL={dev.pfpURL} userID={dev.userID} />;
-				})}
+				<tr>
+					{team.devs.map((dev) => (
+						<TeamMember key={dev.pfpURL} pfpURL={dev.pfpURL} userID={dev.userID} />
+					))}
+				</tr>
 			</tbody>
 			<h2>Ranking Team</h2>
 			<tbody>
-				<tr></tr>
+				<tr>
+					{team.rankingTeam.map((dev) => (
+						<TeamMember key={dev.pfpURL} pfpURL={dev.pfpURL} userID={dev.userID} />
+					))}
+				</tr>
 			</tbody>
 			<h2>Honorable Mentions</h2>
 			<tbody>
