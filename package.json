@@ -12,6 +12,7 @@
 		"next": "10.1.2",
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
-		"showdown": "^1.9.1"
+		"showdown": "^1.9.1",
+		"webpack": "5.4.0"
 	}
 }
