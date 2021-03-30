@@ -1,24 +1,19 @@
-import marked from "marked";
-import { readFileSync, writeFileSync } from "fs";
+import showdown from "showdown";
 
-function generateAboutMe() {
-	var aboutMe = readFileSync("../imports/AboutMe.md", "utf-8");
-	var markdownAboutMe = marked(aboutMe);
-
-	writeFileSync("./AboutMe.html", markdownAboutMe);
-}
-window.onload = generateAboutMe;
+import styles from "../styles/Markdown.module.css";
 
 const AboutMe = () => {
-    return ( 
-        <div>
-            <article>
-				<h1 class="white">About Me</h1>
-				<object style="size: 100px" width="800px" height="800px" data="AboutMe.html"
-					type="text/html"></object>
-            </article>
-        </div>
-     );
-}
- 
+	var converter = new showdown.Converter();
+	var html = converter.makeHtml("# hello");
+
+	return (
+		<div>
+			<article>
+				<h1 className="white">About Me</h1>
+				<div dangerouslySetInnerHTML={{ __html: html }} className={styles.mdContainer}></div>
+			</article>
+		</div>
+	);
+};
+
 export default AboutMe;

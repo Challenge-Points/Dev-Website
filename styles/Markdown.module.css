@@ -1,0 +1,23 @@
+.mdContainer h1 {
+	font-size: 1.2em;
+}
+
+.mdContainer h2 {
+	font-size: 1.1em;
+}
+
+.mdContainer h3 {
+	font-size: 1em;
+}
+
+.mdContainer h4 {
+	font-size: 0.9em;
+}
+
+.mdContainer h5 {
+	font-size: 0.8em;
+}
+
+.mdContainer h6 {
+	font-size: 0.7em;
+}
