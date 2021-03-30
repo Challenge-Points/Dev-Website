@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/Image";
+import Image from "next/image";
 import AboutMe from "../../components/AboutMe";
 
 const User490534335884165121 = () => {
