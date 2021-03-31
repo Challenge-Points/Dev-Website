@@ -1,13 +1,17 @@
 import Link from "next/link";
-import https from "https";
 
 const Users = () => {
 	return (
 		<div>
 			<h1>Users</h1>
-			<Link href="/users/490534335884165121">
-				<a>490534335884165121</a>
-			</Link>
+			<tbody>
+				<tr>
+					<Link href="/users/490534335884165121"><a>ThiJNmEnS</a></Link>
+				</tr>
+				<tr>
+					<Link href="/users/580425653325791272"><a>Aso</a></Link>
+				</tr>
+			</tbody>		
 		</div>
 	);
 };

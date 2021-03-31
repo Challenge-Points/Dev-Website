@@ -10,6 +10,10 @@ const Navbar = () => {
       <Link href="/users/"><a>Users</a></Link>
       <Link href="/maps/"><a>Maps</a></Link>
       <Link href="/team"><a>Team</a></Link>
+      <div class="margin-left-10" />
+      |
+      <div class="margin-left-5" />
+      <Link href="/login"><a>Login</a></Link>
     </nav>
 );
 }

@@ -52,12 +52,18 @@ footer {
   margin: 10px;
 }
 
+.margin-left-5 {
+  margin: 5px;
+}
+
 .picture {
   width: 130px;
   height: 130px;
   border-radius: 40px;
   top: 5px;
   margin: 10px;
+  background-color: #222222;
+  outline: 0;
 }
 
 .pfp {
@@ -69,4 +75,26 @@ footer {
 .icon {
   width: 20px;
   height: 20px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  user-select: none;
 }
