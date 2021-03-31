@@ -25,7 +25,7 @@ const Team = () => {
 			{ pfpURL: "Plasim.png", userID: "" },
 			{ pfpURL: "Salad.png", userID: "" },
 		],
-		honderableMentions: [{ pfpURL: "LicensedCrime.png", userID: "" }],
+		honorableMentions: [{ pfpURL: "LicensedCrime.png", userID: "" }],
 	};
 
 	return (
@@ -49,7 +49,11 @@ const Team = () => {
 			</tbody>
 			<h2>Honorable Mentions</h2>
 			<tbody>
-				<tr></tr>
+				<tr>
+					{team.honorableMentions.map((dev) => (
+						<TeamMember key={dev.pfpURL} pfpURL={dev.pfpURL} userID={dev.userID} />
+					))}
+				</tr>
 			</tbody>
 		</div>
 	);

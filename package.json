@@ -18,5 +18,12 @@
 	"engines": {
 		"node": "12.16.2",
 		"npm": "7.7.5"
+	},
+	"browser": { 
+		"fs": false,
+		"path": false,
+		"os": false,
+		"net": false,
+		"tls": false
 	}
 }
