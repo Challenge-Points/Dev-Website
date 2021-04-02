@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import TeamMember from "../components/teammember";
+import TeamMember from "../components/TeamMember";
 
 const Team = () => {
 	var team = {
