@@ -3,9 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"start": "next dev -p $PORT",
-		"build:good": "next build",
-		"start:good": "next start -p $PORT"
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start -p $PORT"
 	},
 	"dependencies": {
 		"next": "10.1.2",
