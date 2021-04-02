@@ -1,10 +1,10 @@
-import ServerStats from '../components/ServerStats'
+import ServerStats from "../components/serverstats";
 
 export default function Home() {
-  return (
-    <div>
-      <h1>Homepage</h1>
-      <ServerStats />
-    </div>
-  )
+	return (
+		<div>
+			<h1>Homepage</h1>
+			<ServerStats />
+		</div>
+	);
 }
