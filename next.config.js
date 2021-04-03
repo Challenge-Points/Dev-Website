@@ -4,7 +4,7 @@ module.exports = {
 			beforeFiles: [
 				{
 					source: "/api/:url*",
-					destination: "http://localhost:80/api/:url*",
+					destination: process.env.API_URL,
 				},
 			],
 		};
