@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "../../styles/Users.module.css";
 
 export const getServerSideProps = async () => {
-	var res = await fetch(`/api/users/global/1`);
+	var res = await fetch(`https://challenge-points-dev.herokuapp.com/api/users/global/1`);
 	var data = await res.json();
 
 	return {
