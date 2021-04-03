@@ -4,7 +4,7 @@ module.exports = {
 			beforeFiles: [
 				{
 					source: "/api/:url*",
-					destination: process.env.API_URL,
+					destination: "https://challenge-points-dev.herokuapp.com/api/",
 				},
 			],
 		};
