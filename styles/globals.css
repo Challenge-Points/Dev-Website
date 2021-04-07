@@ -48,6 +48,10 @@ footer {
   align-items: flex-start;
 }
 
+.margin-left-20 {
+  margin: 20px;
+}
+
 .margin-left-10 {
   margin: 10px;
 }

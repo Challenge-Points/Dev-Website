@@ -9,7 +9,7 @@ export const getServerSideProps = async () => {
 	};
 };
 
-const MapLoaderboard = (props) => {
+const MapLeaderboard = (props) => {
     return ( 
         <div>
         <hr />
@@ -44,4 +44,4 @@ const MapLoaderboard = (props) => {
      );
 }
 
-export default MapLoaderboard;
+export default MapLeaderboard;
