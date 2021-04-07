@@ -81,6 +81,13 @@ footer {
   height: 20px;
 }
 
+.btn_icon {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin: 1px;
+}
+
 .btn {
   color: #fff;
   background-color: #337ab7;

@@ -25,7 +25,9 @@ const Team = () => {
 			{ pfpURL: "Plasim.png", userID: "" },
 			{ pfpURL: "Salad.png", userID: "" },
 		],
-		honorableMentions: [{ pfpURL: "LicensedCrime.png", userID: "" }],
+		honorableMentions: [
+			{ pfpURL: "LicensedCrime.png", userID: "" },
+		],
 	};
 
 	return (
