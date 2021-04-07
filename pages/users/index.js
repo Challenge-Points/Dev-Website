@@ -31,9 +31,9 @@ const Users = (props) => {
 					{props.data.map((user) => {
 						return (
 							<tr key={user.id}>
-								<td> {user.global.toString()} </td>
-								<td> {user.username} </td>
-								<td> {user.cp.toString()} </td>
+								<td><Link href="/users/490534335884165121"><a> {user.global.toString()} </a></Link></td>
+								<td><Link href="/users/490534335884165121"><a> {user.username} </a></Link></td>
+								<td><Link href="/users/490534335884165121"><a> {user.cp.toString()} </a></Link></td>
 							</tr>
 						);
 					})}

@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 const MapTable = (props) => {
-    var Cover = "/maps/" + props.hash + ".jpg";
     var Hash = props.hash;
     var Name = props.name;
     var Mapper = props.mapper;
@@ -10,6 +9,7 @@ const MapTable = (props) => {
     var Diff = props.diff;
     var ID = props.id;
     var Index = props.index;
+	var Cover = "/maps/" + Hash + ".jpg";
     var URL = "/maps/map?name=" + Name + "&mapper=" + Mapper + "&hash=" + Hash + "&key=" + ID +"&diff=" + Index;
     return ( 
         <>

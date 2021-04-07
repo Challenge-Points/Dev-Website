@@ -8,7 +8,7 @@ const User490534335884165121 = () => {
 			<tbody>
 				<tr>
 				<div class="userinfo">
-					<Image src="/../public/team/ThiJNmEnS.png" alt="ThiJNmEnS pfp" class="picture" width="200" height="200" />
+					<Image src="/team/ThiJNmEnS.png" alt="ThiJNmEnS pfp" class="picture" width="200" height="200" />
 					<div class="margin-left-10">
 						<h1>ThiJNmEnS</h1>
 						<h3 class="gray">"My code is as garbage as ever"</h3>

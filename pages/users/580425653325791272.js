@@ -4,7 +4,7 @@ import Image from "next/image";
 const User580425653325791272 = () => {
 	return (
 		<div class="userinfo">
-			<Image src="/../public/team/Aso.gif" alt="Aso pfp" class="picture" width="200" height="200" />
+			<Image src="/team/Aso.gif" alt="Aso pfp" class="picture" width="200" height="200" />
 			<div class="margin-left-10">
 				<h1>Aso</h1>
 				<h3 class="gray">"I hate CSS"</h3>
