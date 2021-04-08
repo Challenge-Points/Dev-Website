@@ -1,10 +1,13 @@
 import showdown from "showdown";
 import styles from "../styles/Markdown.module.css";
-//import fs from "fs";
 
-const AboutMe = () => {
-	//var data = fs.readFile("./imports/AboutMe.md", "utf8")
-	var data = "Pog"
+const AboutMe = (props) => {
+	if(props.aboutme != undefined) {
+		var data = props.aboutme;
+	}
+	else {
+		var data = "Pog"
+	}
 	var converter = new showdown.Converter();
 	var html = converter.makeHtml(data);
 

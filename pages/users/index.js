@@ -31,9 +31,9 @@ const Users = (props) => {
 					{props.data.map((user) => {
 						return (
 							<tr key={user.id}>
-								<td><Link href="/users/490534335884165121"><a> {user.global.toString()} </a></Link></td>
-								<td><Link href="/users/490534335884165121"><a> {user.username} </a></Link></td>
-								<td><Link href="/users/490534335884165121"><a> {user.cp.toString()} </a></Link></td>
+								<td><Link href={`/users/user?id=${user.id}&name=${user.username}&quote=${user.config.quote}&ssid=${user.config.ssid}&gitid=${user.config.gitid}&steamid=${user.config.steamid}&twitchid=${user.config.twitchid}&malid=${user.config.malid}&aboutme=${user.config.aboutme}`}><a> {user.global.toString()} </a></Link></td>
+								<td><Link href={`/users/user?id=${user.id}&name=${user.username}&quote=${user.config.quote}&ssid=${user.config.ssid}&gitid=${user.config.gitid}&steamid=${user.config.steamid}&twitchid=${user.config.twitchid}&malid=${user.config.malid}&aboutme=${user.config.aboutme}`}><a> {user.username} </a></Link></td>
+								<td><Link href={`/users/user?id=${user.id}&name=${user.username}&quote=${user.config.quote}&ssid=${user.config.ssid}&gitid=${user.config.gitid}&steamid=${user.config.steamid}&twitchid=${user.config.twitchid}&malid=${user.config.malid}&aboutme=${user.config.aboutme}`}><a> {user.cp.toString()} </a></Link></td>
 							</tr>
 						);
 					})}

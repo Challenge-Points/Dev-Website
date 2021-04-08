@@ -109,3 +109,13 @@ footer {
   border-radius: 4px;
   user-select: none;
 }
+
+.report {
+  background-color: #d40000;
+  padding: 10px 10px;
+  font-size: 30px;
+}
+
+.test {
+  width: 100%;
+}
