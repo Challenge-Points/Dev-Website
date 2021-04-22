@@ -8,7 +8,7 @@ const Twitter = (props) => {
     else {
         return ( 
             <a href={`https://twitter.com/${props.twitterid}`}>
-				<Image src="/icons/TwitterLogo.png" class="icon" width="20" height="20" />
+				<Image src="/icons/TwitterLogo.png" className="icon" width="20" height="20" />
 			</a>
         );
     }

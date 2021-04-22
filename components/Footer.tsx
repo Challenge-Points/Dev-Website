@@ -1,4 +1,4 @@
-const Footer = () => {
+const Footer: React.FunctionComponent<{}> = () => {
   return (
     <footer>
       Copyright 2021 Challenge Points

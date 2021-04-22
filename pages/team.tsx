@@ -1,8 +1,8 @@
 import Image from "next/image";
-
+import React from 'react';
 import TeamMember from "../components/TeamMember";
 
-const Team = () => {
+const Team: React.FunctionComponent<{}> = () => {
 	var team = {
 		devs: [
 			{ pfpURL: "Aso.gif", userID: "" },
