@@ -8,7 +8,7 @@ const ScoreSaber = (props) => {
     else {
         return ( 
             <a href={`https://scoresaber.com/u/${props.ssid}`}>
-	    		<Image src="/icons/ScoreSaberLogo.png" class="icon" width="20" height="20" />
+	    		<Image src="/icons/ScoreSaberLogo.png" className="icon" width="20" height="20" />
 	    	</a>
         );
     }

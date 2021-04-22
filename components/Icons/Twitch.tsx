@@ -8,7 +8,7 @@ const Twitch = (props) => {
     else {
         return ( 
             <a href={`https://twitch.tv/${props.twitchid}`}>
-	    		<Image src="/icons/TwitchLogo.png" class="icon" width="20" height="20" />
+	    		<Image src="/icons/TwitchLogo.png" className="icon" width="20" height="20" />
 	    	</a>
         );
     }

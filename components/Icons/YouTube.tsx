@@ -8,7 +8,7 @@ const YouTube = (props) => {
     else {
         return (
         <a href={`https://www.youtube.com/channel/${props.ytid}`}>
-                <Image src="/icons/YouTubeLogo.png" class="icon" width="20" height="20" />
+                <Image src="/icons/YouTubeLogo.png" className="icon" width="20" height="20" />
             </a>
         );
     }

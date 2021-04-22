@@ -1,6 +1,7 @@
 import Link from "next/link";
+import React from "react";
 
-const Login = () => {
+const Login: React.FunctionComponent<{}> = () => {
     return ( 
         <div>
             <h1>Login</h1>

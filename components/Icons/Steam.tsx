@@ -8,7 +8,7 @@ const Steam = (props) => {
     else {
         return ( 
             <a href={`https://steamcommunity.com/id/${props.steamid}`}>
-	    		<Image src="/icons/SteamLogo.png" class="icon" width="20" height="20" />
+	    		<Image src="/icons/SteamLogo.png" className="icon" width="20" height="20" />
 	    	</a>
         );
     }

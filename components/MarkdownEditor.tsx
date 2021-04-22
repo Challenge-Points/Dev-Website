@@ -1,7 +1,7 @@
 import showdown from "showdown";
 import React from "react";
 
-function updatePreview(event, type) {
+function updatePreview(event, type?) {
     var converter = new showdown.Converter();
     
     if (event == "") {
