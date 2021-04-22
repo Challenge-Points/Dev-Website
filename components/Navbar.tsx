@@ -1,30 +1,47 @@
 import Link from "next/link";
 
+export const navItems: {
+    href: string;
+    label: string;
+}[] = [
+    {
+        href: "/",
+        label: "Home",
+    },
+    {
+        href: "/users",
+        label: "Leaderboard",
+    },
+    {
+        href: "/maps",
+        label: "Maps",
+    },
+    {
+        href: "/team",
+        label: "Team",
+    },
+];
+
 const Navbar = () => {
     return (
-        <nav>
-            <div className="logo">
-                <h1>Challenge Points</h1>
+        <header className="bg-gradient-to-r from-blue-600 to-purple-700">
+            <div className="max-w-6xl mx-auto p-6 text-white flex justify-between items-center">
+                <div className="italic font-semibold text-2xl">
+                    {/* Logo */}
+                    Challenge<strong>Points</strong>
+                </div>
+                <nav className='hidden md:block'>
+                    {navItems.map((link) => (
+                        <Link href={link.href} key={link.href}>
+                            <a className='p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded'>{link.label}</a>
+                        </Link>
+                    ))}
+                </nav>
+                <div className='hidden md:block'>
+                    Log In
+                </div>
             </div>
-            <Link href="/">
-                <a>Home</a>
-            </Link>
-            <Link href="/users/">
-                <a>Users</a>
-            </Link>
-            <Link href="/maps/">
-                <a>Maps</a>
-            </Link>
-            <Link href="/team">
-                <a>Team</a>
-            </Link>
-            <div className="margin-left-10" />
-            |
-            <div className="margin-left-5" />
-            <Link href="/login">
-                <a>Login</a>
-            </Link>
-        </nav>
+        </header>
     );
 };
 
