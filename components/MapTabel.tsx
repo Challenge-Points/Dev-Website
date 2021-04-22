@@ -20,22 +20,22 @@ const MapTable = (props) => {
 					</div>
 				</td>
 				<td>
-					<div class="margin-left-20">
+					<div className="margin-left-20">
 						<Link href={`${URL}`}><a>{`${Name}`}</a></Link>
 					</div>
 				</td>
 				<td>
-					<div class="margin-left-20">
+					<div className="margin-left-20">
                         <Link href={`${URL}`}>{`${Mapper}`}</Link>
 					</div>
 				</td>
 				<td>
-					<div class="margin-left-20">
+					<div className="margin-left-20">
                         <Link href={`${URL}`}>{`${CP}`}</Link>
 					</div>
 				</td>
                 <td>
-					<div class="margin-left-20">
+					<div className="margin-left-20">
                         <Link href={`${URL}`}>{`${Diff}`}</Link>
 					</div>
 				</td>

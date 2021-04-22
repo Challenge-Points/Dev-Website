@@ -13,6 +13,8 @@ export const getServerSideProps = async () => {
 };
 
 const UserInfo = (props) => {
+    // TODO: implement user
+    const user = {id: ''}
     return (
         <div>
             {props.data.map((config) => {
@@ -28,7 +30,7 @@ const UserInfo = (props) => {
                                         type="text"
                                         id="username"
                                         name="username"
-                                        minlength="3"
+                                        minLength={3}
                                         size={40}
                                         value={`${config.config.username}`}
                                     />
@@ -36,7 +38,7 @@ const UserInfo = (props) => {
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">Github: &nbsp;</label>
+                                    <label htmlFor="fname">Github: &nbsp;</label>
                                 </td>
                                 <td>
                                     <input
@@ -59,30 +61,28 @@ const UserInfo = (props) => {
                                         type="text"
                                         id="myanimelist"
                                         name="myanimelist"
-                                        size="40"
+                                        size={40}
                                         value={`${config.config.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">Reddit: &nbsp;</label>
+                                    <label htmlFor="fname">Reddit: &nbsp;</label>
                                 </td>
                                 <td>
                                     <input
                                         type="text"
                                         id="reddit"
                                         name="reddit"
-                                        size="40"
+                                        size={40}
                                         value={`${config.config.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">
+                                    <label htmlFor="fname">
                                         ScoreSaber: &nbsp;
                                     </label>
                                 </td>
@@ -91,69 +91,64 @@ const UserInfo = (props) => {
                                         type="text"
                                         id="scoresaber"
                                         name="scoresaber"
-                                        size="40"
+                                        size={40}
                                         value={`${user.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">Steam: &nbsp;</label>
+                                    <label htmlFor="fname">Steam: &nbsp;</label>
                                 </td>
                                 <td>
                                     <input
                                         type="text"
                                         id="steam"
                                         name="steam"
-                                        size="40"
+                                        size={40}
                                         value={`${user.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">Twitch: &nbsp;</label>
+                                    <label htmlFor="fname">Twitch: &nbsp;</label>
                                 </td>
                                 <td>
                                     <input
                                         type="text"
                                         id="twitch"
                                         name="twitch"
-                                        size="40"
+                                        size={40}
                                         value={`${user.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">Twitter: &nbsp;</label>
+                                    <label htmlFor="fname">Twitter: &nbsp;</label>
                                 </td>
                                 <td>
                                     <input
                                         type="text"
                                         id="twitter"
                                         name="twitter"
-                                        size="40"
+                                        size={40}
                                         value={`${user.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label for="fname">YouTube: &nbsp;</label>
+                                    <label htmlFor="fname">YouTube: &nbsp;</label>
                                 </td>
                                 <td>
                                     <input
                                         type="text"
                                         id="youtube"
                                         name="youtube"
-                                        size="40"
+                                        size={40}
                                         value={`${user.id}`}
-                                        onChange=""
                                     />
                                 </td>
                             </tr>
