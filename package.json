@@ -13,6 +13,7 @@
 		"react": "17.0.2",
 		"react-dom": "17.0.2",
 		"showdown": "^1.9.1",
+		"swr": "^0.5.6",
 		"webpack": "5.4.0"
 	},
 	"engines": {

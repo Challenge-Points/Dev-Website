@@ -2,14 +2,12 @@ import Link from "next/link";
 
 import styles from "../../styles/Users.module.css";
 
-export const getServerSideProps = async () => {
-	var res = await fetch(`https://challenge-points-dev.herokuapp.com/api/users/global/1`);
-	var data = await res.json();
+const fetcher = url => fetch(url).then(r => r.json())
 
-	return {
-		props: { data },
-	};
-};
+export async function getStaticProps() {
+	const data = await fetcher('https://challenge-points-dev.herokuapp.com/api/users/global/1')
+	return { props: { data } }
+}
 
 const Users = (props) => {
 	return (
@@ -24,7 +22,7 @@ const Users = (props) => {
 						<b> Username </b>
 					</td>
 					<td>
-						<b>CP</b>
+						<b> CP </b>
 					</td>
 				</thead>
 				<tbody>
