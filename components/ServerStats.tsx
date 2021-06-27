@@ -1,38 +1,35 @@
-import styles from "../styles/Users.module.css";
+import useSWR from "swr";
 
-const fetcher = url => fetch(url).then(r => r.json())
+const fetcher = (url) => fetch(url).then((r) => r.json());
 
-export async function getStaticProps() {
-	const data = await fetcher('https://challenge-points-dev.herokuapp.com/api/stats/all')
-	return { props: { data } }
-}
+const ServerStats = () => {
+    //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/stats/all`, fetcher);  // First API
+    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/stats/all`, fetcher);      // Second API
 
-const ServerStats = (props) => {
-	console.log(props.data)
-    return ( 
+    if (error) return <div>failed to load</div>;
+    if (!data) return <div>loading...</div>;
+    return (
+    <pre>
         <div>    
             <div>
                 <p>Server Stats</p>
-                <table className={styles.userTable}>
+                <table>
                     <thead>
                         <td>
                             <b>API Calls</b>
                         </td>
                     </thead>
                     <tbody>
-                        {/*props.data.then((stats) => {
-							return (
-								<tr>
-									<td> {stats.apicalls.toString()} </td>
-								</tr>	
-							);
-						})*/}
+						<tr>
+							<td> {data.apicalls} </td>
+						</tr>	
                     </tbody>
                 </table>
             </div>
         </div>
+    </pre>
     );
-};
+}
 
 /*export async function getServerSideProps() {
 	var res = await fetch(`https://challenge-points-dev.herokuapp.com/api/stats/all`);

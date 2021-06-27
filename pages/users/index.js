@@ -5,7 +5,8 @@ import styles from "../../styles/Users.module.css";
 const fetcher = url => fetch(url).then(r => r.json())
 
 export async function getStaticProps() {
-	const data = await fetcher('https://challenge-points-dev.herokuapp.com/api/users/global/1')
+	//const data = await fetcher('https://challenge-points-dev.herokuapp.com/api/users/global/1')	// First API
+	const data = await fetcher('https://challengepointsapi.herokuapp.com/api/users/global/1')		// Second API
 	return { props: { data } }
 }
 
