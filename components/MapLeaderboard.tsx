@@ -2,20 +2,20 @@ import useSWR from "swr";
 import axios from "axios";
 import styles from "../styles/Users.module.css";
 
-function getDiscord() {
+/*function getDiscord() {
     const dcfetcher = (url, token) =>
     axios
       .get(url, { headers: { Authorization: "Bot " + token } })
       .then((res) => res.data);
 
-    const { data, error } = useSWR([`https://discord.com/api/users/490534335884165121`, `ODEzNjkxNjE5MTczMzM1MDQx.YDS_Xw.2DcVQxJuW4AK1BnIKOvA_G90XQ8`], dcfetcher);
+    const { data, error } = useSWR([`https://discord.com/api/users/490534335884165121`, `ODEzNjkxNjE5MTczMzM1MDQx.YDS_Xw.2DcVQxJuW4AK1BnIKOvA_G90XQ8 TOKEN DOESNT WORK, I LEAKED IT SO I REGENERATED ONE`], dcfetcher);
     
     if (error) console.log(error);
     if (data) console.log(data);
-}
+}*/
 
 const MapLeaderboard= (props) => {
-    getDiscord()
+    //getDiscord()
     const keys = Object.keys(props.scores).map(String);
     console.log()
     return (
