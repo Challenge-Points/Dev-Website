@@ -60,7 +60,7 @@ const User = () => {
 						<hr />
 						<br />
 							<div>
-								<h1 class="rankcolor" style="--rank: var(--#1FA2FF)">#{data.global}</h1>
+								<h1 class="rankcolor">#{data.global}</h1>
 								<p>{data.cp} CP</p>
 							</div>
 						<br />
