@@ -12,6 +12,7 @@ import MyAnimeList from '../../components/Icons/MyAnimeList';
 import YouTube from '../../components/Icons/YouTube';
 import Twitter from '../../components/Icons/Twitter';
 import Reddit from '../../components/Icons/Reddit';
+import UserLeaderboard from '../../components/UserLeaderboard';
 
 
 
@@ -57,14 +58,7 @@ const User = () => {
 			                </div>
 			            </tr>
 						<br />
-						<hr />
-						<br />
-							<div>
-								<h1 class="rankcolor">#{data.global}</h1>
-								<p>{data.cp} CP</p>
-							</div>
-						<br />
-						<hr />
+						<UserLeaderboard id={`${router.query.id}`}></UserLeaderboard>
 						<br />
 			            <tr>
 				            <div>
