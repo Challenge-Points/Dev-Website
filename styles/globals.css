@@ -7,6 +7,13 @@ body {
   font-family: "Nunito";
 }
 
+.center {
+  display: block;
+  border-style:none;
+  margin: 0 auto;
+  margin-left: 100px;
+}
+
 .userinfo {
   display: flex;
   justify-content: flex-start;

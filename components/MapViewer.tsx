@@ -8,8 +8,8 @@ const MapViewer = (props) => {
     var url = "https://skystudioapps.com/bs-viewer/?id=" + id + "&difficulty=" + diff + "&mode=" + mode;
     return ( 
         <div>
-            <iframe src={url} width="960" height="540" scrolling="no"/>
-            <h6>BSViewer is powered by skystudioapps.com</h6>
+            <iframe src={url} width="960" height="540" scrolling="no" className="center"/>
+            <h6 className="center">BSViewer is powered by skystudioapps.com</h6>
         </div>
      );
 }

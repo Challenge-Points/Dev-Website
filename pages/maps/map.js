@@ -1,6 +1,7 @@
 import MapLeaderboard from "../../components/MapLeaderboard";
 import MapViewer from "../../components/MapViewer"
 import { useRouter } from 'next/router'
+import useSWR from "swr";
 //import ClipboardJS from 'clipboard'
 
 function bsrClipboard() {
@@ -8,40 +9,37 @@ function bsrClipboard() {
     bsr.execCommand("copy");
     alert("Copied bsr")
 }
-/*
-async function getMapInfo(router) { 
-    if(router.isReady) {
-        var res = await fetch(`https://challenge-points-dev.herokuapp.com/api/maps/hash/${router.query.hash}`);
-        var data = await res.json();
-    }
-    return {
-        props: { data }
-    }
-};*/
 
-const Map = (props) => {
+const Map = () => {
     const router = useRouter();
-    //var props = getMapInfo(router);
-    //props.data.then((map) => console.log(map));
+    const fetcher = (url) => fetch(url).then((r) => r.json());
     //var clipboard = new ClipboardJS('.btn');
+    //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/hash/${router.query.hash}`, fetcher);     // First API
+    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/hash/${router.query.hash}`, fetcher);         // Second API
+
+    if (error) return <div>failed to load</div>;
+    if (!data) return <div>loading...</div>;
+    console.log(data)
     return (
+    <pre>
         <div>
             <div>
-                <h1>{router.query?.name}</h1>
-                <h4>by {router.query?.mapper}</h4>
+                <h1>{data.m_n}</h1>
+                <h4>by {data.mr_n}</h4>
                 <div>
                     <clipboard />
                     <button title="Copy !bsr" className="btn">!</button>
-                    <a href={`https://beatsaver.com/beatmap/${router.query?.key}`} target="_blank">
+                    <a href={`https://beatsaver.com/beatmap/${data.key}`} target="_blank">
                     <button title="Beatsaver Link" className="btn">
                         <img src="/icons/BeatSaverLogo.png" className="btn_icon"/>
                     </button>
                     </a>
                 </div>
-                <MapLeaderboard hash={router.query?.hash}/>
-                <MapViewer id={router.query?.key} diff={router.query?.diff} mode={router.query?.mode}/>
+                <MapLeaderboard scores={data.scores}/>
+                <MapViewer id={data.key} diff={data.i} mode={data.m}/>
             </div>
         </div>
+    </pre>
     );
 };
  

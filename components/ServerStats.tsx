@@ -1,8 +1,7 @@
 import useSWR from "swr";
 
-const fetcher = (url) => fetch(url).then((r) => r.json());
-
 const ServerStats = () => {
+    const fetcher = (url) => fetch(url).then((r) => r.json());
     //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/stats/all`, fetcher);  // First API
     const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/stats/all`, fetcher);      // Second API
 
