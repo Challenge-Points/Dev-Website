@@ -2,15 +2,13 @@ import styles from "../styles/Users.module.css";
 import useSWR from "swr";
 
 const UserLeaderboard= (props) => {
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const fetcher = (url) => fetch(url).then((r) => r.json());
-	//const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/users/${router.query.id}/scores`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/users/${props.id}/scores`, fetcher);      // Second API
+	//const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/users/${props.id}/scores/10`, fetcher);  // First API
+    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/users/${props.id}/scores/10`, fetcher);      // Second API
 
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
-    //getDiscord()
-    //const keys = Object.keys(props.scores).map(String);
-    console.log(props)
     return (
     <pre>
         <div>
@@ -29,18 +27,24 @@ const UserLeaderboard= (props) => {
                     <td>
                         <b>Score</b>
                     </td>
+                    <td>
+                        <b>Time</b>
+                    </td>
                 </thead>
                 <tbody>
-                    {/*keys.map((key) => {
+                    {data.map((key, index) => {
+                        var unix = key['time']
+                        var date = new Date(unix * 1000)
                         return (
                             <tr>
-                                <td><h4>{props.scores[key].rank}</h4></td>
-                                <td><h4>{key}</h4></td>
-                                <td><h4>{props.scores[key].cp}</h4></td>
-                                <td><h4>{props.scores[key].score}</h4></td>
+                                <td><h4>{String(index + 1)}</h4></td>
+                                <td><h4>{key['name']}</h4></td>
+                                <td><h4>{key['cp']}</h4></td>
+                                <td><h4>{key['score']}</h4></td>
+                                <td><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
                             </tr>
                         )
-                    })*/}
+                    })}
                 </tbody>
             </table>
             <hr />

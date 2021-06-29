@@ -17,7 +17,6 @@ import styles from "../styles/Users.module.css";
 const MapLeaderboard= (props) => {
     //getDiscord()
     const keys = Object.keys(props.scores).map(String);
-    console.log()
     return (
         <div>
             <hr />
