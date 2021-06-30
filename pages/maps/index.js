@@ -5,30 +5,30 @@ const Maps = () => {
     return (
         <div>
             <h1>Maps</h1>
-            <tabelkq className={styles.userTable}>
+            <tabel className={styles.userTable}>
                 <thead>
                     <td>
-                        <div class="margin-left-20">
+                        <div className="margin-left-20">
                             <b> </b>
                         </div>
                     </td>
                     <td>
-                        <div class="margin-left-20">
+                        <div className="margin-left-20">
                             <b> Name </b>
                         </div>
                     </td>
                     <td>
-                        <div class="margin-left-20">
+                        <div className="margin-left-20">
                             <b> Mapper </b>
                         </div>
                     </td>
                     <td>
-                        <div class="margin-left-20">
+                        <div className="margin-left-20">
                             <b> CP </b>
                         </div>
                     </td>
                     <td>
-                        <div class="margin-left-20">
+                        <div className="margin-left-20">
                             <b> Diff </b>
                         </div>
                     </td>
@@ -161,7 +161,7 @@ const Maps = () => {
                         index="0"
                     />
                 </tbody>
-            </tabelkq>
+            </tabel>
         </div>
     );
 };

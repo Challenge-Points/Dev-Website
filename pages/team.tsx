@@ -5,8 +5,8 @@ import TeamMember from "../components/TeamMember";
 const Team: React.FunctionComponent<{}> = () => {
 	var team = {
 		devs: [
-			{ pfpURL: "580425653325791272.gif", userID: "580425653325791272" },
 			{ pfpURL: "490534335884165121.png", userID: "490534335884165121" },
+			{ pfpURL: "580425653325791272.gif", userID: "580425653325791272" },
 			{ pfpURL: "440286981646450688.png", userID: "440286981646450688" },
 			{ pfpURL: "415210421994258433.png", userID: "415210421994258433" },
 			{ pfpURL: "232574143818760192.png", userID: "232574143818760192" },

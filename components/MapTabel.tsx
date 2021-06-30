@@ -2,25 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const MapTable = (props) => {
-    var Hash = props.hash;
-    var Name = props.name;
-    var Mapper = props.mapper;
-    var CP = props.cp + " CP";
-    var Diff = props.diff;
-    var ID = props.id;
-    var Index = props.index;
-    var Cover = "/maps/" + Hash + ".jpg";
-    var URL =
-        "/maps/map?name=" +
-        Name +
-        "&mapper=" +
-        Mapper +
-        "&hash=" +
-        Hash +
-        "&key=" +
-        ID +
-        "&diff=" +
-        Index;
+    var Cover = "/maps/" + props.hash + ".jpg";
+    var URL = `/maps/map?hash=${props.hash}`
     return (
         <>
             <tr>
@@ -37,23 +20,23 @@ const MapTable = (props) => {
                 <td>
                     <div className="margin-left-20">
                         <Link href={`${URL}`}>
-                            <a>{`${Name}`}</a>
+                            <a>{`${props.name}`}</a>
                         </Link>
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>{`${Mapper}`}</Link>
+                        <Link href={`${URL}`}>{`${props.mapper}`}</Link>
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>{`${CP}`}</Link>
+                        <Link href={`${URL}`}>{`${props.cp} CP`}</Link>
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>{`${Diff}`}</Link>
+                        <Link href={`${URL}`}>{`${props.diff}`}</Link>
                     </div>
                 </td>
             </tr>

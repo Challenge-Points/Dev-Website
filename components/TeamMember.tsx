@@ -5,10 +5,10 @@ const TeamMember = ({ userID, pfpURL }) => {
     return (
         <>
             <td>
-                <Link href={`/users/${userID}`}>
+                <Link href={`/users/user?id=${userID}`}>
                     <a>
                         <Image
-                            src={`/team/${pfpURL}`}
+                            src={`/users/${pfpURL}`}
                             alt={pfpURL}
                             className="picture"
                             width="200"

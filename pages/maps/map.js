@@ -35,7 +35,7 @@ const Map = () => {
                     </button>
                     </a>
                 </div>
-                <MapLeaderboard scores={data.scores}/>
+                <MapLeaderboard hash={router.query.hash}/>
                 <MapViewer id={data.key} diff={data.i} mode={data.m}/>
             </div>
         </div>

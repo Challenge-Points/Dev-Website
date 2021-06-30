@@ -58,7 +58,7 @@ const User = () => {
 			                </div>
 			            </tr>
 						<br />
-						<UserLeaderboard id={`${router.query.id}`}></UserLeaderboard>
+						<UserLeaderboard type="user" id={`${router.query.id}`}></UserLeaderboard>
 						<br />
 			            <tr>
 				            <div>
