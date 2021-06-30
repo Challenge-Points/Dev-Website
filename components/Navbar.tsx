@@ -20,6 +20,10 @@ export const navItems: {
         href: "/team",
         label: "Team",
     },
+    {
+        href: "/docs",
+        label: "docs",
+    },
 ];
 
 const Navbar = () => {

@@ -100,3 +100,30 @@ body {
   resize: none;
   border: 1px solid transparent;
 }
+
+.accordion {
+  background-color: #337ab7;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #2e6da4;
+}
+
+.panel {
+  padding: 0 18px;
+  overflow: hidden;
+}
+
+.apiTable {
+  border-collapse: collapse;
+  width: 100%;
+  padding: 8px;
+}
