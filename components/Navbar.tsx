@@ -22,7 +22,7 @@ export const navItems: {
     },
     {
         href: "/docs",
-        label: "docs",
+        label: "Docs",
     },
 ];
 
