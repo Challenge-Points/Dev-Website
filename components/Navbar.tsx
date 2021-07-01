@@ -32,7 +32,9 @@ const Navbar = () => {
             <div className="max-w-6xl mx-auto p-6 text-white flex justify-between items-center">
                 <div className="italic font-semibold text-2xl">
                     {/* Logo */}
-                    Challenge<strong>Points</strong>
+                    <Link href={"/"} key={"/"}>
+                    <a className='p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded'>Challenge<strong>Points</strong></a>
+                    </Link>
                 </div>
                 <nav className='hidden md:block'>
                     {navItems.map((link) => (
