@@ -35,10 +35,10 @@ const MapLeaderboard= (props) => {
                 {keys.map((key, index) => {
                         return (
                             <tr>
-                                <td><h4>{index + 1}</h4></td>
-                                <td><Link href={`../../users/user?id=${data[key].user_id}`}>{data[key].name}</Link></td>
-                                <td><h4>{data[key].cp}</h4></td>
-                                <td><h4>{data[key].score}</h4></td>
+                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{index + 1}</a></Link></td>
+                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].name}</a></Link></td>
+                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].cp}</a></Link></td>
+                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].score}</a></Link></td>
                             </tr>
                         )
                     })}

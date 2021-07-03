@@ -44,7 +44,7 @@ const Navbar = () => {
                     ))}
                 </nav>
                 <div className='hidden md:block'>
-                    <Link href="/dashboard?id=490534335884165121" key="/dashboard?id=490534335884165121">
+                    <Link href="/login" key="/login">
                     <a className='p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded'>Log <strong>In</strong></a>
                     </Link>
                 </div>

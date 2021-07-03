@@ -18,9 +18,8 @@ input,textarea {
 
 .center {
   display: block;
-  border-style:none;
-  margin: 0 auto;
-  margin-left: 100px;
+  padding: auto;
+  width: 100%;
 }
 
 .userinfo {

@@ -20,23 +20,23 @@ const MapTable = (props) => {
                 <td>
                     <div className="margin-left-20">
                         <Link href={`${URL}`}>
-                            <a>{`${props.name}`}</a>
+                            <a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{props.name}</a>
                         </Link>
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>{`${props.mapper}`}</Link>
+                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{props.mapper}</a></Link>
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>{`${props.cp} CP`}</Link>
+                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{`${props.cp} CP`}</a></Link>
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>{`${props.diff}`}</Link>
+                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{props.diff}</a></Link>
                     </div>
                 </td>
             </tr>

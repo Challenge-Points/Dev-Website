@@ -30,9 +30,9 @@ const Users = (props) => {
 					{props.data.map((user) => {
 						return (
 							<tr key={user.id}>
-								<td><Link href={`/users/user?id=${user.id}`}><a> {user.global.toString()} </a></Link></td>
-								<td><Link href={`/users/user?id=${user.id}`}><a> {user.username} </a></Link></td>
-								<td><Link href={`/users/user?id=${user.id}`}><a> {user.cp.toString()} </a></Link></td>
+								<td><Link href={`/users/user?id=${user.id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded"> {user.global.toString()} </a></Link></td>
+								<td><Link href={`/users/user?id=${user.id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded"> {user.username} </a></Link></td>
+								<td><Link href={`/users/user?id=${user.id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded"> {user.cp.toString()} </a></Link></td>
 							</tr>
 						);
 					})}
