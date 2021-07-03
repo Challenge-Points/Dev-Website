@@ -2,12 +2,7 @@ import showdown from "showdown";
 import styles from "../styles/Markdown.module.css";
 
 const AboutMe = (props) => {
-	if(props.aboutme != undefined) {
-		var data = props.aboutme;
-	}
-	else {
-		var data = "Pog"
-	}
+	var data = props.aboutme;
 	var converter = new showdown.Converter();
 	var html = converter.makeHtml(data);
 

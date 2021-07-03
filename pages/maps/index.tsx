@@ -5,7 +5,7 @@ const Maps = () => {
     return (
         <div>
             <h1>Maps</h1>
-            <tabel className={styles.userTable}>
+            <table className={styles.userTable}>
                 <thead>
                     <td>
                         <div className="margin-left-20">
@@ -161,7 +161,7 @@ const Maps = () => {
                         index="0"
                     />
                 </tbody>
-            </tabel>
+            </table>
         </div>
     );
 };

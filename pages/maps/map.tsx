@@ -4,11 +4,11 @@ import { useRouter } from 'next/router'
 import useSWR from "swr";
 //import ClipboardJS from 'clipboard'
 
-function bsrClipboard() {
+/*function bsrClipboard() {
     var bsr = router.query.key
     bsr.execCommand("copy");
     alert("Copied bsr")
-}
+}*/
 
 const Map = () => {
     const router = useRouter();
@@ -27,7 +27,7 @@ const Map = () => {
                 <h1>{data.m_n}</h1>
                 <h4>by {data.mr_n}</h4>
                 <div>
-                    <clipboard />
+                    {/*<clipboard />*/}
                     <button title="Copy !bsr" className="btn">!</button>
                     <a href={`https://beatsaver.com/beatmap/${data.key}`} target="_blank">
                     <button title="Beatsaver Link" className="btn">
