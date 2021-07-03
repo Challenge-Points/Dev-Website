@@ -14,10 +14,6 @@ import Twitter from '../../components/Icons/Twitter';
 import Reddit from '../../components/Icons/Reddit';
 import UserLeaderboard from '../../components/UserLeaderboard';
 
-
-
-
-
 const User = () => {
     const router = useRouter();
 	const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -35,13 +31,13 @@ const User = () => {
             <div>
 			    <tbody>
                     <td>&nbsp;</td>
-                    <td class="test">
+                    <td className="test">
 			            <tr>
-			                <div class="userinfo">
-			        	        <Image src={`/users/${router.query.id}.png`} class="picture" width="200" height="200" />
-			    		        <div class="margin-left-10">
+			                <div className="userinfo">
+			        	        <Image src={`/users/${router.query.id}.png`} className="picture" width="200" height="200" />
+			    		        <div className="margin-left-10">
 		        		    	    <h1><b>{data.username}</b></h1>
-	    	    		    	    <h3 class="gray">{`"${data.config?.quote}"`}</h3>
+	    	    		    	    <h3 className="gray">{`"${data.config?.quote}"`}</h3>
 			    		            <h1>
 				    	        	    &gt;
 					            	    <Discord id={router.query.id} />

@@ -2,6 +2,9 @@ import { useState } from "react";
 
 import users_userId_data from "./API/users_userId_data";
 import users_global_page from "./API/users_global_page";
+import users_recent_page from "./API/users_recent_page";
+import users_userId_scores_limit from "./API/users_userId_scores_limit copy";
+import maps_mapHash_scores_limit from "./API/maps_mapHash_scores_limit";
 
 const Accordion = (props) => {
     const [isShowing, setIsShowing] = useState(false);
@@ -18,6 +21,18 @@ const Accordion = (props) => {
 
         case "users_global_page":
             content = users_global_page;
+            break;
+
+        case "users_recent_page":
+            content = users_recent_page;
+            break;
+
+        case "users_userId_scores_limit":
+            content = users_userId_scores_limit;
+            break;
+        
+        case "maps_mapHash_scores_limit":
+            content = maps_mapHash_scores_limit;
             break;
     }
 

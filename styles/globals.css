@@ -121,8 +121,25 @@ input,textarea {
   overflow: hidden;
 }
 
-.apiTable {
-  border-collapse: collapse;
-  width: 100%;
-  padding: 8px;
+.apiTable{
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: auto;
+}
+
+.apiTable tr {
+	padding: .35em;
+}
+  
+.apiTable th,
+.apiTable td {
+	padding: .625em;
+	text-align: center;
+}
+  
+.apiTable th {
+	font-size: .85em;
+	letter-spacing: .1em;
 }
