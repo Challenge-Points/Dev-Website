@@ -7,6 +7,15 @@ body {
   font-family: "Nunito";
 }
 
+input,textarea {
+  color: #fff;
+  background-color: #181A1B;
+  overflow: auto;
+  height: 100%;
+  resize: none;
+  border: 1px solid transparent;
+}
+
 .center {
   display: block;
   border-style:none;
@@ -90,15 +99,6 @@ body {
 
 .test {
   width: 100%;
-}
-
-.MDE {
-  color: #fff;
-  background-color: #181A1B;
-  overflow: auto;
-  height: 100%;
-  resize: none;
-  border: 1px solid transparent;
 }
 
 .accordion {

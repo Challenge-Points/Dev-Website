@@ -27,21 +27,23 @@ const UserLeaderboard= (props) => {
             <hr />
             <table className={styles.userTable}>
                 <thead>
-                    <td>
-                        <b>#</b>
-                    </td>
-                    <td>
-                        <b>Map</b>
-                    </td>
-                    <td>
-                        <b>CP</b>
-                    </td>
-                    <td>
-                        <b>Score</b>
-                    </td>
-                    <td>
-                        <b>Time</b>
-                    </td>
+                    <tr>
+                        <th scope="col">
+                            <b>#</b>
+                        </th>
+                        <th scope="col">
+                            <b>Map</b>
+                        </th>
+                        <th scope="col">
+                            <b>CP</b>
+                        </th>
+                        <th scope="col">
+                            <b>Score</b>
+                        </th>
+                        <th scope="col">
+                            <b>Time</b>
+                        </th>
+                    </tr>
                 </thead>
                 <tbody>
                     {data.map((key, index) => {
@@ -49,11 +51,11 @@ const UserLeaderboard= (props) => {
                         var date = new Date(unix * 1000)
                         return (
                             <tr>
-                                <td><h4>{String(index + 1)}</h4></td>
-                                <td><Link href={`/maps/map?hash=${key['map_hash']}`}>{key['name']}</Link></td>
-                                <td><h4>{key['cp']}</h4></td>
-                                <td><h4>{key['score']}</h4></td>
-                                <td><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
+                                <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
+                                <td data-label="Map"><Link href={`/maps/map?hash=${key['map_hash']}`}>{key['name']}</Link></td>
+                                <td data-label="CP"><h4>{key['cp']}</h4></td>
+                                <td data-label="Score"><h4>{key['score']}</h4></td>
+                                <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
                             </tr>
                         )
                     })}

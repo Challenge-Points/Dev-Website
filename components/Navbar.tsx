@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="max-w-6xl mx-auto p-6 text-white flex justify-between items-center">
                 <div className="italic font-semibold text-2xl">
                     {/* Logo */}
-                    <Link href={"/"} key={"/"}>
+                    <Link href="/" key="/">
                     <a className='p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded'>Challenge<strong>Points</strong></a>
                     </Link>
                 </div>
@@ -44,7 +44,9 @@ const Navbar = () => {
                     ))}
                 </nav>
                 <div className='hidden md:block'>
-                    Log In
+                    <Link href="/dashboard?id=490534335884165121" key="/dashboard?id=490534335884165121">
+                    <a className='p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded'>Log <strong>In</strong></a>
+                    </Link>
                 </div>
             </div>
         </header>

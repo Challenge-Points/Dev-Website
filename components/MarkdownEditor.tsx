@@ -1,44 +1,34 @@
-import showdown from "showdown";
 import React from "react";
 
-function updatePreview(event, type?) {
-    var converter = new showdown.Converter();
 
-    if (event == "") {
-        var newhtml = converter.makeHtml(
-            "Type something here to update your AboutMe!"
-        );
-        var value = { __html: newhtml };
-        if (type == "value") {
-            return "Type something here to update your AboutMe!";
-        } else {
-            return <div dangerouslySetInnerHTML={value} />;
-        }
-    } else {
-        var newdata = event.target.value;
-        var newhtml = converter.makeHtml(newdata);
-        var value = { __html: newhtml };
-        return <div dangerouslySetInnerHTML={value} />;
-    }
+var value = ""
+
+function renderPreview(event) {
+    console.log(event.target.value)
+    value = event.target.value;
 }
 
-const MarkdownEditor = () => {
-    let previewref = React.createRef<HTMLDivElement>();
-    var html = updatePreview("");
-
+const MarkdownEditor = (props) => {
+    value = props.config.aboutme.toString()
     return (
         <div>
             <h3>About Me</h3>
+            <br />
             <textarea
                 className="MDE"
                 rows={20}
                 cols={130}
                 wrap="off"
-                defaultValue={updatePreview("", "value").toString()}
-                onChange={(event) => updatePreview(event, previewref)}
+                defaultValue={value}
+                //value={value}
+                onChange={renderPreview}
             />
-            <h5>preview</h5>
-            <div ref={previewref}>{html}</div>
+            <br />
+            <h1><strong>preview</strong></h1>
+            <br />
+            <hr />
+            <br />
+            <div dangerouslySetInnerHTML={{ __html: value}}></div>
         </div>
     );
 };
