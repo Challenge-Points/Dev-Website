@@ -24,7 +24,7 @@ const Dashboard = () => {
             <br />
             <hr />
             <br />
-            <Badges />
+            <Badges badges={data.badges}/>
             <br />
             <hr />
             <br />

@@ -1,28 +1,12 @@
 const UserInfo = (props) => {
-    if (props.config.gitid != null) {
-        props.config.gitid = "https://github.com/" + props.config.gitid;
-    }
-    if (props.config.malid != null) {
-        props.config.malid = "https://myanimelist.net/profile/" + props.config.malid;
-    }
-    if (props.config.redditid != null) {
-        props.config.redditid = "https://www.reddit.com/user/" + props.config.redditid;
-    }
-    if (props.config.ssid != null) {
-        props.config.ssid = "https://scoresaber.com/u/" + props.config.ssid;
-    }
-    if (props.config.steamid != null) {
-        props.config.steamid = "https://steamcommunity.com/id/" + props.config.steamid;
-    }
-    if (props.config.twitchid != null) {
-        props.config.twitchid = "https://twitch.tv/" + props.config.twitchid;
-    }
-    if (props.config.twitterid != null) {
-        props.config.twitterid = "https://twitter.com/" + props.config.twitterid;
-    }
-    if (props.config.ytid != null) {
-        props.config.ytid = "https://www.youtube.com/channel/" + props.config.ytid;
-    }
+    props.config.gitid &&= `https://github.com/${props.config.gitid}`
+    props.config.malid &&= `https://github.com/${props.config.malid}`
+    props.config.redditid &&= `https://github.com/${props.config.redditid}`
+    props.config.ssid &&= `https://github.com/${props.config.ssid}`
+    props.config.steamid &&= `https://github.com/${props.config.steamid}`
+    props.config.twitchid &&= `https://github.com/${props.config.twitchid}`
+    props.config.twitterid &&= `https://github.com/${props.config.twitterid}`
+    props.config.ytid &&= `https://github.com/${props.config.ytid}`
     return (
         <div>
             <table>

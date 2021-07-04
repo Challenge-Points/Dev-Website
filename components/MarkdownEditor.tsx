@@ -24,11 +24,12 @@ const MarkdownEditor = (props) => {
                 onChange={renderPreview}
             />
             <br />
-            <h1><strong>preview</strong></h1>
+            {// PREVIEW IS BEING A REAL PAIN IN THE ASS, so for now i'm just going to remove it
+            /*<h1><strong>preview</strong></h1>
             <br />
             <hr />
             <br />
-            <div dangerouslySetInnerHTML={{ __html: value}}></div>
+            <div dangerouslySetInnerHTML={{ __html: value}}></div>*/}
         </div>
     );
 };
