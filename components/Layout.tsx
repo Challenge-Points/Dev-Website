@@ -1,6 +1,6 @@
 import Footer from "./Footer";
 import Navbar from "./Navbar";
-import Head from 'next/Head';
+import Head from 'next/head';
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => {
     return (
