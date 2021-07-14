@@ -32,9 +32,17 @@ const User = () => {
 			    <tbody>
                     <td>&nbsp;</td>
                     <td className="test">
+						<tr>
+							<br />
+						</tr>
 			            <tr>
 			                <div className="userinfo">
-			        	        <Image src={`/users/${router.query.id}.png`} className="picture" width="200" height="200" />
+								<div className="avatardiv">
+			        	        	<Image src={`/users/${router.query.id}.png`} className="picture" width="200" height="200" />
+								</div>
+								<div className="badgediv">
+									<Image src={`/badges/${data.config?.badge}.png`} className="" width="280" height="280" />
+								</div>
 			    		        <div className="margin-left-10">
 		        		    	    <h1><b>{data.username}</b></h1>
 	    	    		    	    <h3 className="gray">{`"${data.config?.quote}"`}</h3>
