@@ -1,12 +1,12 @@
 const UserInfo = (props) => {
     props.config.gitid &&= `https://github.com/${props.config.gitid}`
-    props.config.malid &&= `https://github.com/${props.config.malid}`
-    props.config.redditid &&= `https://github.com/${props.config.redditid}`
-    props.config.ssid &&= `https://github.com/${props.config.ssid}`
-    props.config.steamid &&= `https://github.com/${props.config.steamid}`
-    props.config.twitchid &&= `https://github.com/${props.config.twitchid}`
-    props.config.twitterid &&= `https://github.com/${props.config.twitterid}`
-    props.config.ytid &&= `https://github.com/${props.config.ytid}`
+    props.config.malid &&= `https://myanimelist.net/${props.config.malid}`
+    props.config.redditid &&= `https://reddit.com/${props.config.redditid}`
+    props.config.ssid &&= `https://scoresaber.com/${props.config.ssid}`
+    props.config.steamid &&= `https://steamcommunity.com/${props.config.steamid}`
+    props.config.twitchid &&= `https://twitch.tv/${props.config.twitchid}`
+    props.config.twitterid &&= `http://twitter.com/${props.config.twitterid}`
+    props.config.ytid &&= `https://www.youtube.com/${props.config.ytid}`
     return (
         <div>
             <table>

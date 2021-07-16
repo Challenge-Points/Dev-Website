@@ -24,6 +24,7 @@ const User = () => {
     if (!data) return <div>loading...</div>;
 
 	//rank color gradient: #1FA2FF, #12D8FA, #A6FFCB
+	
 
     return ( 
 	<pre>
@@ -58,7 +59,7 @@ const User = () => {
                                         <Twitter twitterid={data.config?.twitterid} />
                                         <Reddit redditid={data.config?.redditid} />
 			    		            </h1>
-									<h1 className="Rank">Global #{data.global}</h1>
+									<h1 className="rank" >Global #{data.global}</h1>
 									&gt;{data.badges.map((item) => {
 										return (
 											<Image src={`/badges/${item}.png`} alt={item} height="25" width="25" />

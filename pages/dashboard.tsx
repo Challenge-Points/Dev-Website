@@ -28,6 +28,8 @@ const Dashboard = () => {
             <br />
             <hr />
             <br />
+            <h3>About Me</h3>
+            <br />
             <MarkdownEditor config={data.config} />
         </div>
     );
