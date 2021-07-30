@@ -767,3 +767,18 @@ textarea {
 .rc-md-editor .header-list .list-item:hover {
     background: #0a0a0a;
 }
+
+.inline-block {
+    display: inline-block;
+}
+
+.apikey {
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    transition: 0.5s;
+}
+
+.apikey:hover {
+    filter: blur();
+    transition: 0.5s;
+}

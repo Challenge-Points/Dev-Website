@@ -1,6 +1,11 @@
 import Image from "next/image";
+import axios from "axios";
 
 const Badges = (props) => {
+	const ApplyBadge = (BadgeType, props) => {
+		//axios.get(`https://challenge-points-dev.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}/${props.token}`);	// First API
+		axios.get(`https://challengepointsapi.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}O/${props.token}`);		// Second API
+	}
 	return (
 		<div>
 			<h3>Badges</h3>
@@ -11,7 +16,7 @@ const Badges = (props) => {
 						<tr>	
 						</tr>
 						<td>
-							<button className="picture" onClick={() => ApplyBadge({item})}>
+							<button className="picture" onClick={() => ApplyBadge(item, props)}>
 								<Image src={`/badges/${item}.png`} alt={item} height="100" width="100" />
 							</button>
 						</td>
@@ -19,7 +24,7 @@ const Badges = (props) => {
 					)
 					else return (
 					<td>
-						<button className="picture" onClick={() => ApplyBadge({item})}>
+						<button className="picture" onClick={() => ApplyBadge(item, props)}>
 							<Image src={`/badges/${item}.png`} alt={item} height="100" width="100" />
 						</button>
 					</td>
@@ -31,8 +36,3 @@ const Badges = (props) => {
 };
 
 export default Badges;
-
-function ApplyBadge(BadgeType) {
-	//TODO: PUT request to the API for updating the current displayed badge
-	console.log(BadgeType);
-}

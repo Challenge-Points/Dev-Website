@@ -1,15 +1,37 @@
+import useSWR from 'swr';
+import * as clipboard from "clipboard-polyfill/text";
+import Image from "next/image";
+import axios from "axios";
+
 const UserInfo = (props) => {
-    props.config.gitid &&= `https://github.com/${props.config.gitid}`
-    props.config.malid &&= `https://myanimelist.net/${props.config.malid}`
-    props.config.redditid &&= `https://reddit.com/${props.config.redditid}`
-    props.config.ssid &&= `https://scoresaber.com/${props.config.ssid}`
-    props.config.steamid &&= `https://steamcommunity.com/${props.config.steamid}`
-    props.config.twitchid &&= `https://twitch.tv/${props.config.twitchid}`
-    props.config.twitterid &&= `http://twitter.com/${props.config.twitterid}`
-    props.config.ytid &&= `https://www.youtube.com/${props.config.ytid}`
+    const gitid = (props.config.gitid ? `https://github.com/${props.config.gitid}`  : '')
+    const malid = (props.config.malid ? `https://myanimelist.net/${props.config.malid}`  : '')
+    const redditid = (props.config.redditid ? `https://reddit.com/${props.config.redditid}`  : '')
+    const ssid = (props.config.ssid ? `https://scoresaber.com/${props.config.ssid}`  : '')
+    const steamid = (props.config.steamid ? `https://steamcommunity.com/${props.config.steamid}`  : '')
+    const twitchid = (props.config.twitchid ? `https://twitch.tv/${props.config.twitchid}`  : '')
+    const twitterid = (props.config.twitterid ? `http://twitter.com/${props.config.twitterid}`  : '')
+    const ytid = (props.config.ytid ? `https://www.youtube.com/${props.config.ytid}`  : '')
+
+    const fetcher = (url) => fetch(url).then((r) => r.json());
+	// const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/auth/key/get/${props.id}/${props.token}`, fetcher);  // First API
+    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/auth/key/get/${props.id}/${props.token}`, fetcher);      // Second API
+    
+    if (error) return <div>failed to load</div>;
+    if (!data) return <div>loading...</div>;
+
+    const newKey = () => {
+		// axios.get(`https://challenge-points-dev.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}/${props.token}`);	// First API
+		axios.get(`https://challengepointsapi.herokuapp.com/api/auth/key/generate/${props.id}/${props.token}`);		                // Second API
+	}
+    const copyToClipboard = () => {
+        clipboard.writeText(data.apikey);
+        alert("Key copied to clipboard");
+    }
+
     return (
         <div>
-            <table>
+            <table className="inline-block">
                 <tbody>
                     <tr>
                         <td>
@@ -36,15 +58,13 @@ const UserInfo = (props) => {
                                 id="github"
                                 name="github"
                                 size={40}
-                                value={props.config.gitid}
+                                value={gitid}
                             />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="fname">
-                                MyAnimeList: &nbsp;
-                            </label>
+                            <label htmlFor="fname">MyAnimeList: &nbsp;</label>
                         </td>
                         <td>
                             <input
@@ -52,7 +72,7 @@ const UserInfo = (props) => {
                                 id="myanimelist"
                                 name="myanimelist"
                                 size={40}
-                                value={props.config.malid}
+                                value={malid}
                             />
                         </td>
                     </tr>
@@ -66,15 +86,13 @@ const UserInfo = (props) => {
                                 id="reddit"
                                 name="reddit"
                                 size={40}
-                                value={props.config.redditid}
+                                value={redditid}
                             />
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label htmlFor="fname">
-                                ScoreSaber: &nbsp;
-                            </label>
+                            <label htmlFor="fname">ScoreSaber: &nbsp;</label>
                         </td>
                         <td>
                             <input
@@ -82,7 +100,7 @@ const UserInfo = (props) => {
                                 id="scoresaber"
                                 name="scoresaber"
                                 size={40}
-                                value={props.config.ssid}
+                                value={ssid}
                             />
                         </td>
                     </tr>
@@ -96,7 +114,7 @@ const UserInfo = (props) => {
                                 id="steam"
                                 name="steam"
                                 size={40}
-                                value={props.config.steamid}
+                                value={steamid}
                             />
                         </td>
                     </tr>
@@ -110,7 +128,7 @@ const UserInfo = (props) => {
                                 id="twitch"
                                 name="twitch"
                                 size={40}
-                                value={props.config.twitchid}
+                                value={twitchid}
                             />
                         </td>
                     </tr>
@@ -124,7 +142,7 @@ const UserInfo = (props) => {
                                 id="twitter"
                                 name="twitter"
                                 size={40}
-                                value={props.config.twitterid}
+                                value={twitterid}
                             />
                         </td>
                     </tr>
@@ -138,11 +156,41 @@ const UserInfo = (props) => {
                                 id="youtube"
                                 name="youtube"
                                 size={40}
-                                value={props.config.ytid}
+                                value={ytid}
                             />
                         </td>
                     </tr>
                 </tbody>
+            </table>
+            <table className="inline-block margin-left-20">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label htmlFor="fname">API Key: &nbsp;</label>
+                        </td>
+                        <td>
+                            <input
+                                className="apikey"
+                                type="text"
+                                id="apikey"
+                                name="apikey"
+                                size={37}
+                                value={data?.apikey}
+                                readOnly
+                            />
+                        </td>
+                        <td>
+                            <button onClick={() => copyToClipboard()} title="Copy to Clipboard">
+                                <Image src={`/icons/copy-content.png`} width="25" height="25"/>
+                            </button>
+                        </td>
+                        <td>
+                            <button onClick={() => newKey()} title="Generate new key">
+                                <Image src={`/icons/star.png`} width="25" height="25"/>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>    
             </table>
         </div>
     );
