@@ -19,7 +19,6 @@
 		"showdown": "^1.9.1",
 		"showdown-xss-filter": "^0.2.0",
 		"swr": "^0.5.6",
-		"unfetch": "^4.2.0",
 		"use-client-router": "^1.0.4",
 		"webpack": "5.4.0"
 	},
