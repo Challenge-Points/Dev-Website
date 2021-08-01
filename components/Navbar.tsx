@@ -44,7 +44,7 @@ const Navbar = () => {
                     ))}
                 </nav>
                 <div className='hidden md:block'>
-                    <Link href="https://challengepointsapi.herokuapp.com:80/api/auth/discord" key="/login">
+                    <Link href="https://challengepointsapi.herokuapp.com/api/auth/discord" key="/login">
                     <a className='p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded'>Log <strong>In</strong></a>
                     </Link>
                 </div>
