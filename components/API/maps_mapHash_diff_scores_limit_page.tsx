@@ -18,9 +18,6 @@ function doc() {
                         <b>Parameters</b>
                     </th>
                     <th>
-                        <b>Type</b>
-                    </th>
-                    <th>
                         <b>Description</b>
                     </th>
                     <th>
@@ -34,9 +31,6 @@ function doc() {
                         <p>mapHash</p>
                     </td>
                     <td>
-                        <p>String</p>
-                    </td>
-                    <td>
                         <b>The hash of the map you want to acquire info from</b>
                     </td>
                     <td>
@@ -46,9 +40,6 @@ function doc() {
                 <tr>
                     <td>
                         <p>diff</p>
-                    </td>
-                    <td>
-                        <p>String</p>
                     </td>
                     <td>
                         <b>The difficulity you want to get the info from</b>
@@ -62,9 +53,6 @@ function doc() {
                         <p>limit</p>
                     </td>
                     <td>
-                        <p>Number</p>
-                    </td>
-                    <td>
                         <b>The max amount of scores that will be returned</b>
                     </td>
                     <td>
@@ -74,9 +62,6 @@ function doc() {
                 <tr>
                     <td>
                         <p>page</p>
-                    </td>
-                    <td>
-                        <p>Number</p>
                     </td>
                     <td>
                         <b>The offset of the scores list</b>

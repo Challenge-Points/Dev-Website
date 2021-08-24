@@ -4,8 +4,8 @@ const Docs = () => {
     return(
         <div>
             <div>
-                <h1>API Documentation</h1>
-                <p>V1.0.0 REST</p>
+                <b>API Documentation</b>
+                <p>V1</p>
             </div>
             <br />
             <div>
