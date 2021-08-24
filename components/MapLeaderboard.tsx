@@ -5,12 +5,12 @@ import useSWR from "swr";
 const MapLeaderboard= (props) => {
     const fetcher = (url) => fetch(url).then((r) => r.json());
     //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/${props.hash}/scores/20`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/${props.hash}/scores/20`, fetcher);      // Second API
+    //const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/${props.hash}/${props.diff}/scores/20/1`, fetcher);      // Second API
+    const { data, error } = useSWR(`http://localhost/api/maps/${props.hash}/${props.diff}/scores/20/1`, fetcher);
     
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
     const keys = Object.keys(data).map(String);
-    console.log(data)
 
     return (
     <pre>

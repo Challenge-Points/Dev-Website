@@ -15,11 +15,20 @@ const Map = () => {
     const fetcher = (url) => fetch(url).then((r) => r.json());
     //var clipboard = new ClipboardJS('.btn');
     //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/hash/${router.query.hash}`, fetcher);     // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/hash/${router.query.hash}`, fetcher);         // Second API
+    //const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/hash/${router.query.hash}`, fetcher);         // Second API
+    const { data, error } = useSWR(`http://localhost/api/maps/hash/${router.query.hash}`, fetcher);
 
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
     
+    var diff = router.query.diff;
+    if (diff == "expertPlus") {diff = "expert+"}
+
+    var i;
+    data.difficulties.map((diffdata) => {
+        if (diffdata.d == diff) {i = diffdata.i};
+    })
+
     return (
     <pre>
         <div>
@@ -35,8 +44,8 @@ const Map = () => {
                     </button>
                     </a>
                 </div>
-                <MapLeaderboard hash={router.query.hash}/>
-                <MapViewer id={data.key} diff={data.i} mode={data.m}/>
+                <MapLeaderboard hash={router.query.hash} diff={router.query.diff}/>
+                <MapViewer id={data.key} diff={i} mode={data.m}/>
             </div>
         </div>
     </pre>

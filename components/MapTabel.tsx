@@ -3,7 +3,8 @@ import Image from "next/image";
 
 const MapTable = (props) => {
     var Cover = "/maps/" + props.hash + ".jpg";
-    var URL = `/maps/map?hash=${props.hash}`
+    var URL = `/maps/map?hash=${props.hash}&diff=${props.diff}`
+    if (props.diff == "expertPlus") {var diff = "expert+"} else {diff = props.diff};
     return (
         <>
             <tr>
@@ -36,7 +37,7 @@ const MapTable = (props) => {
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{props.diff}</a></Link>
+                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{diff}</a></Link>
                     </div>
                 </td>
             </tr>
