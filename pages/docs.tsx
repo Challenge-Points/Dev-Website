@@ -9,7 +9,7 @@ const Docs = () => {
             </div>
             <br />
             <div>
-                <Accordion title="maps/:mapHash/scores/:limit" content="maps_mapHash_scores_limit" />
+                <Accordion title="maps/:mapHash/:diff/scores/:limit/:page" content="maps_mapHash_diff_scores_limit_page" />
                 <Accordion title="maps/all/:page" content="maps_all_page" />
                 <Accordion title="maps/hash/:mapHash" content="maps_hash_mapHash" />
                 <Accordion title="maps/queue/:page" content="maps_queue_page" />

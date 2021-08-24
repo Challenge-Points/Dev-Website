@@ -4,7 +4,7 @@ import users_userId_data from "./API/users_userId_data";
 import users_global_page from "./API/users_global_page";
 import users_recent_page from "./API/users_recent_page";
 import users_userId_scores_limit from "./API/users_userId_scores_limit copy";
-import maps_mapHash_scores_limit from "./API/maps_mapHash_scores_limit";
+import maps_mapHash_diff_scores_limit_page from "./API/maps_mapHash_diff_scores_limit_page";
 
 const Accordion = (props) => {
     const [isShowing, setIsShowing] = useState(false);
@@ -31,8 +31,8 @@ const Accordion = (props) => {
             content = users_userId_scores_limit;
             break;
         
-        case "maps_mapHash_scores_limit":
-            content = maps_mapHash_scores_limit;
+        case "maps_mapHash_diff_scores_limit_page":
+            content = maps_mapHash_diff_scores_limit_page;
             break;
     }
 
