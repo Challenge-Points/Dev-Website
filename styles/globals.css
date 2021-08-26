@@ -779,28 +779,13 @@ textarea {
     filter: blur();
     transition: 0.5s;
 }
-
-.arrow {
-    box-sizing: border-box;
-    height: 5vw;
-    width: 5vw;
-    border-style: solid;
-    border-color: white;
-    border-width: 0px 1px 1px 0px;
-    transition: border-width 150ms ease-in-out;
-}
-
-.arrow:hover {
-    border-bottom-width: 4px;
-    border-right-width: 4px;
-  }
   
-.right {
+.pageright {
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
 }
   
-.left {
+.pageleft {
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
 }

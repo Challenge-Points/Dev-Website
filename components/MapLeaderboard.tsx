@@ -46,14 +46,14 @@ const MapLeaderboard= (props) => {
                     })}
                     <tr>
                         <td>
-                            <div className="left">
+                            <div className="pageleft">
                                 <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
                             </div>
                         </td>
                         <td />
                         <td />
                         <td>
-                            <div className="right">
+                            <div className="pageright">
                                 <button onClick={() => pageSwitch(page + 1)}>^</button>
                             </div>
                         </td>
