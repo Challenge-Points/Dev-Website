@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 const Layout: React.FunctionComponent<{}> = ({ children }) => {
     return (
-        <div className="content bg-white dark:bg-gray-900 dark:text-white min-h-screen flex flex-col">
+        <div className="content bg-gray-900 min-h-screen flex flex-col">
             <Head>
                 <link rel="shortcut icon" href="icons/favicon.ico" />
             </Head>

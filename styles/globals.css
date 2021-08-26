@@ -3,10 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-    color-scheme: dark;
-}
-
 body {
     font-family: "Nunito";
 }
