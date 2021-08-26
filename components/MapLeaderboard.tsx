@@ -1,15 +1,18 @@
 import styles from "../styles/Users.module.css";
 import Link from "next/link";
 import useSWR from "swr";
+import React, { useState } from "react";
 
 const MapLeaderboard= (props) => {
+    const [page, pageSwitch] = useState(1);
     const fetcher = (url) => fetch(url).then((r) => r.json());
-    //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/${props.hash}/scores/20`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/${props.hash}/${props.diff}/scores/20/1`, fetcher);      // Second API
+    //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/${props.hash}/scores/20/${page}`, fetcher);  // First API
+    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/${props.hash}/${props.diff}/scores/20/${page}`, fetcher);      // Second API
     
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
-    const keys = Object.keys(data).map(String);
+
+    var keys = Object.keys(data).map(String);
 
     return (
     <pre>
@@ -41,6 +44,20 @@ const MapLeaderboard= (props) => {
                             </tr>
                         )
                     })}
+                    <tr>
+                        <td>
+                            <div className="left">
+                                <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
+                            </div>
+                        </td>
+                        <td />
+                        <td />
+                        <td>
+                            <div className="right">
+                                <button onClick={() => pageSwitch(page + 1)}>^</button>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <hr />
