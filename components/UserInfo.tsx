@@ -2,16 +2,26 @@ import useSWR from 'swr';
 import * as clipboard from "clipboard-polyfill/text";
 import Image from "next/image";
 import axios from "axios";
+import React from "react";
 
 const UserInfo = (props) => {
-    const gitid = (props.config.gitid ? `https://github.com/${props.config.gitid}`  : '')
-    const malid = (props.config.malid ? `https://myanimelist.net/${props.config.malid}`  : '')
-    const redditid = (props.config.redditid ? `https://reddit.com/${props.config.redditid}`  : '')
-    const ssid = (props.config.ssid ? `https://scoresaber.com/${props.config.ssid}`  : '')
-    const steamid = (props.config.steamid ? `https://steamcommunity.com/${props.config.steamid}`  : '')
-    const twitchid = (props.config.twitchid ? `https://twitch.tv/${props.config.twitchid}`  : '')
-    const twitterid = (props.config.twitterid ? `http://twitter.com/${props.config.twitterid}`  : '')
-    const ytid = (props.config.ytid ? `https://www.youtube.com/${props.config.ytid}`  : '')
+    const username = React.useRef(null);
+    const git = React.useRef(null);
+    const gitid = (props.config.gitid ? `https://github.com/${props.config.gitid}`  : '');
+    const mal = React.useRef(null);
+    const malid = (props.config.malid ? `https://myanimelist.net/${props.config.malid}`  : '');
+    const reddit = React.useRef(null);
+    const redditid = (props.config.redditid ? `https://reddit.com/${props.config.redditid}`  : '');
+    const ss = React.useRef(null);
+    const ssid = (props.config.ssid ? `https://scoresaber.com/${props.config.ssid}`  : '');
+    const steam = React.useRef(null);
+    const steamid = (props.config.steamid ? `https://steamcommunity.com/${props.config.steamid}`  : '');
+    const twitch = React.useRef(null);
+    const twitchid = (props.config.twitchid ? `https://twitch.tv/${props.config.twitchid}`  : '');
+    const twitter = React.useRef(null);
+    const twitterid = (props.config.twitterid ? `http://twitter.com/${props.config.twitterid}`  : '');
+    const yt = React.useRef(null);
+    const ytid = (props.config.ytid ? `https://www.youtube.com/${props.config.ytid}`  : '');
 
     const fetcher = (url) => fetch(url).then((r) => r.json());
 	// const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/auth/key/get/${props.id}/${props.token}`, fetcher);  // First API
@@ -23,11 +33,25 @@ const UserInfo = (props) => {
     const newKey = () => {
 		// axios.get(`https://challenge-points-dev.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}/${props.token}`);	// First API
 		axios.get(`https://challengepointsapi.herokuapp.com/api/auth/key/generate/${props.id}/${props.token}`);		                // Second API
-	}
+	};
     const copyToClipboard = () => {
         clipboard.writeText(data.apikey);
         alert("Key copied to clipboard");
-    }
+    };
+
+    const handleUpload = () => {
+        const data = {
+            gitid: git.current.value,
+            malid: mal.current.value,
+            redditid: reddit.current.value,
+            ssid: ss.current.value,
+            steamid: steam.current.value,
+            twitchid: twitch.current.value,
+            twitterid: twitter.current.value,
+            ytid: yt.current.value
+        }
+        axios.post(`http://challengepointsapi.herokuapp.com/api/users/links/${props.id}/update/${props.token}`, data);      // Second API
+    };
 
     return (
         <div>
@@ -39,12 +63,13 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={username}
                                 type="text"
                                 id="username"
                                 name="username"
                                 minLength={3}
                                 size={40}
-                                value={props.username}
+                                defaultValue={props.username}
                             />
                         </td>
                     </tr>
@@ -54,11 +79,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={git}
                                 type="text"
                                 id="github"
                                 name="github"
                                 size={40}
-                                value={gitid}
+                                defaultValue={gitid}
                             />
                         </td>
                     </tr>
@@ -68,11 +94,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={mal}
                                 type="text"
                                 id="myanimelist"
                                 name="myanimelist"
                                 size={40}
-                                value={malid}
+                                defaultValue={malid}
                             />
                         </td>
                     </tr>
@@ -82,11 +109,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={reddit}
                                 type="text"
                                 id="reddit"
                                 name="reddit"
                                 size={40}
-                                value={redditid}
+                                defaultValue={redditid}
                             />
                         </td>
                     </tr>
@@ -96,11 +124,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={ss}
                                 type="text"
                                 id="scoresaber"
                                 name="scoresaber"
                                 size={40}
-                                value={ssid}
+                                defaultValue={ssid}
                             />
                         </td>
                     </tr>
@@ -110,11 +139,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={steam}
                                 type="text"
                                 id="steam"
                                 name="steam"
                                 size={40}
-                                value={steamid}
+                                defaultValue={steamid}
                             />
                         </td>
                     </tr>
@@ -124,11 +154,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={twitch}
                                 type="text"
                                 id="twitch"
                                 name="twitch"
                                 size={40}
-                                value={twitchid}
+                                defaultValue={twitchid}
                             />
                         </td>
                     </tr>
@@ -138,11 +169,12 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={twitter}
                                 type="text"
                                 id="twitter"
                                 name="twitter"
                                 size={40}
-                                value={twitterid}
+                                defaultValue={twitterid}
                             />
                         </td>
                     </tr>
@@ -152,12 +184,22 @@ const UserInfo = (props) => {
                         </td>
                         <td>
                             <input
+                                ref={yt}
                                 type="text"
                                 id="youtube"
                                 name="youtube"
                                 size={40}
-                                value={ytid}
+                                defaultValue={ytid}
                             />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td />
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onClick={handleUpload} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">Upload</button>
+                            <h1><b className="text-red-600">DOESN'T WORK</b> Soon™</h1>
                         </td>
                     </tr>
                 </tbody>

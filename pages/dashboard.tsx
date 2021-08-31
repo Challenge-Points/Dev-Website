@@ -4,7 +4,6 @@ import UserInfo from "../components/UserInfo";
 import { useRouter } from "next/router";
 import useSWR from 'swr';
 import Link from "next/link";
-import { loadGetInitialProps } from "next/dist/shared/lib/utils";
 
 const Dashboard = () => {
     const router = useRouter();

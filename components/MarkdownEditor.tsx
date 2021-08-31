@@ -5,7 +5,6 @@ import showdown from "showdown";
 import axios from "axios";
 
 const MarkdownEditor = (props) => {
-    const fetcher = (url) => fetch(url).then((r) => r.json());
     const mdEditor = React.useRef(null);
     const [value, setValue] = React.useState(props.config.aboutme);
     const converter = new showdown.Converter({ extensions: [xssFilter] });
