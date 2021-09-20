@@ -6,8 +6,10 @@ import React, { useState } from "react";
 const MapLeaderboard= (props) => {
     const [page, pageSwitch] = useState(1);
     const fetcher = (url) => fetch(url).then((r) => r.json());
+    var diff;
+    if (props.diff == 'expert+') {diff = 'expertplus'} else {diff = props.diff};
     //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/${props.hash}/scores/20/${page}`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/${props.hash}/${props.diff}/scores/20/${page}`, fetcher);      // Second API
+    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/mapscores/${props.hash}/${diff}/scores/20/${page}`, fetcher);      // Second API
     
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
@@ -37,10 +39,10 @@ const MapLeaderboard= (props) => {
                 {keys.map((key, index) => {
                         return (
                             <tr>
-                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{index + 1}</a></Link></td>
-                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].name}</a></Link></td>
-                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].cp}</a></Link></td>
-                                <td><Link href={`../../users/user?id=${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].score}</a></Link></td>
+                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{index + 1}</a></Link></td>
+                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].name}</a></Link></td>
+                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].cp}</a></Link></td>
+                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].score}</a></Link></td>
                             </tr>
                         )
                     })}
