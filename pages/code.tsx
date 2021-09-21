@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import { useEffect } from 'react';
 import firebase from "firebase";
 
-const code = () => {
+const Code = () => {
 	const { query, isReady, push } = useRouter()
 	if (!isReady) {
 		return null;
@@ -22,4 +22,4 @@ const code = () => {
 	return <div>Redirecting...</div>;
 };
 
-export default code
+export default Code

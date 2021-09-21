@@ -15,7 +15,7 @@ const NoPage = () => {
 
 			<Link href="/">
 				<a>
-					<Image src="/memes/jerry the cat.png" width="200" height="200"></Image>
+					<Image src="/memes/jerry the cat.png" alt="" width="200" height="200"></Image>
 				</a>
 			</Link>
 

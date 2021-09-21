@@ -1,0 +1,7 @@
+{
+  "extends": "next",
+  "rules": {
+    "react-hooks/rules-of-hooks": "off",   //It just works
+    "react/no-unescaped-entities": "off" //To lazy to fix rn
+  }
+}

@@ -2,6 +2,7 @@ import MapLeaderboard from "../../components/MapLeaderboard";
 import MapViewer from "../../components/MapViewer"
 import { useRouter } from 'next/router'
 import useSWR from "swr";
+import Image from 'next/image';
 //import ClipboardJS from 'clipboard'
 
 /*function bsrClipboard() {
@@ -37,9 +38,9 @@ const Map = () => {
                 <div>
                     {/*<clipboard />*/}
                     <button title="Copy !bsr" className="btn">!</button>
-                    <a href={`https://beatsaver.com/beatmap/${data.key}`} target="_blank">
+                    <a href={`https://beatsaver.com/beatmap/${data.key}`}>
                     <button title="Beatsaver Link" className="btn">
-                        <img src="/icons/BeatSaverLogo.png" className="btn_icon"/>
+                        <Image src="/icons/BeatSaverLogo.png" alt="" height="30" width="30" className="btn_icon" />
                     </button>
                     </a>
                 </div>

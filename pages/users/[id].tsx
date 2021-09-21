@@ -85,9 +85,9 @@ const User = () => {
 										</div>
 										<br />
 										<Image src="/icons/GreaterThen.png" className="" width="20" height="20" />
-										{data.badges.map((item) => {
+										{data.badges.map((item, index) => {
 											return (
-												<Image src={`/badges/${item}.png`} alt={item} height="25" width="25" />
+												<Image key={index} src={`/badges/${item}.png`} alt={item} height="25" width="25" />
 											)
 										})}
 										<LineGraph {...graph} />
