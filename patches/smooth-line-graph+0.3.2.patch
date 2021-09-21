@@ -1,0 +1,21 @@
+diff --git a/node_modules/smooth-line-graph/dist/constants.js b/node_modules/smooth-line-graph/dist/constants.js
+index 55052a6..9fd78e5 100644
+--- a/node_modules/smooth-line-graph/dist/constants.js
++++ b/node_modules/smooth-line-graph/dist/constants.js
+@@ -4,11 +4,11 @@ Object.defineProperty(exports, "__esModule", {
+     value: true
+ });
+ var DEFAULT_CURVINESS = exports.DEFAULT_CURVINESS = 0.33;
+-var DEFAULT_AXIS_COLOR = exports.DEFAULT_AXIS_COLOR = '#333';
+-var DEFAULT_TEXT_COLOR = exports.DEFAULT_TEXT_COLOR = '#000';
+-var DEFAULT_TICK_COLOR_MAJOR = exports.DEFAULT_TICK_COLOR_MAJOR = '#222';
+-var DEFAULT_TICK_COLOR_MINOR = exports.DEFAULT_TICK_COLOR_MINOR = '#666';
+-var DEFAULT_FONT_SIZE = exports.DEFAULT_FONT_SIZE = 12;
++var DEFAULT_AXIS_COLOR = exports.DEFAULT_AXIS_COLOR = '#111827';
++var DEFAULT_TEXT_COLOR = exports.DEFAULT_TEXT_COLOR = '#111827';
++var DEFAULT_TICK_COLOR_MAJOR = exports.DEFAULT_TICK_COLOR_MAJOR = '#111827';
++var DEFAULT_TICK_COLOR_MINOR = exports.DEFAULT_TICK_COLOR_MINOR = '#111827';
++var DEFAULT_FONT_SIZE = exports.DEFAULT_FONT_SIZE = 0;
+ var DEFAULT_FONT_FAMILY = exports.DEFAULT_FONT_FAMILY = 'Arial, Helvetica, sans-serif';
+ var MIN_LOG_VALUE = exports.MIN_LOG_VALUE = 0.0000000000000000001;
+ 
