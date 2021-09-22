@@ -43,7 +43,7 @@ const Map = () => {
                         <Image src="/icons/BeatSaverLogo.png" alt="" height="30" width="30" className="btn_icon" />
                     </button>
                     </a>
-                    <a href={`beatsaver://${data.key}`} target="_blank">
+                    <a href={`beatsaver://${data.key}`}>
                     <button title="OneClick Install" className="btn">
                         🖱️
                     </button>

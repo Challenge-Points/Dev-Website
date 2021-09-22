@@ -16,7 +16,7 @@ const Dashboard = () => {
         <div>
             <div>failed to load</div>
             <br />
-            first time loging in? try this <a className="text-blue-300"><Link href={`https://challengepointsapi.herokuapp.com/api/users/register/${router.query.id}/${cookie.Token}`}>button</Link></a>!
+            first time loging in? try this <a className="text-blue-300"><Link href={`https://challengepointsapi.herokuapp.com/api/users/register/${router.query.id}/${cookie.get('Token')}`}>button</Link></a>!
             <br />
             <br />
             <hr />
@@ -35,17 +35,17 @@ const Dashboard = () => {
             <br />
             <hr />
             <br />
-            <UserInfo id={router.query.id} config={data.config} username={data.username} token={cookie.Token}/>
+            <UserInfo id={router.query.id} config={data.config} username={data.username} token={cookie.get('Token')}/>
             <br />
             <hr />
             <br />
-            <Badges id={router.query.id} badges={data.badges} token={cookie.Token}/>
+            <Badges id={router.query.id} badges={data.badges} token={cookie.get('Token')}/>
             <br />
             <hr />
             <br />
             <h3>About Me</h3>
             <br />
-            <MarkdownEditor config={data.config} token={cookie.Token} id={router.query.id}/>
+            <MarkdownEditor config={data.config} token={cookie.get('Token')} id={router.query.id}/>
         </div>
     );
 };
