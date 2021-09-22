@@ -43,6 +43,11 @@ const Map = () => {
                         <Image src="/icons/BeatSaverLogo.png" alt="" height="30" width="30" className="btn_icon" />
                     </button>
                     </a>
+                    <a href={`beatsaver://${data.key}`} target="_blank">
+                    <button title="OneClick Install" className="btn">
+                        🖱️
+                    </button>
+                    </a>
                 </div>
                 <MapLeaderboard hash={router.query.hash} diff={router.query.diff}/>
                 <MapViewer id={data.key} diff={i} mode={data.m}/>
