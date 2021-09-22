@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect } from 'react';
 import firebase from "firebase";
+import cookie from "js-cookie";
 
 const Code = () => {
 	const { query, isReady, push } = useRouter()
@@ -14,9 +15,11 @@ const Code = () => {
 			return { user }
 		})
 	
+		cookie.set('Token', query.t.toString());
+
 	useEffect(() => {
 		setTimeout(() => {
-			push(`/dashboard?id=${data['i'].user.uid}&t=${query.t}`);
+			push(`/dashboard?id=${data['i'].user.uid}`);
 		}, 3000)
 	})
 	return <div>Redirecting...</div>;

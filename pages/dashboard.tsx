@@ -4,6 +4,7 @@ import UserInfo from "../components/UserInfo";
 import { useRouter } from "next/router";
 import useSWR from 'swr';
 import Link from "next/link";
+import cookie from "js-cookie";
 
 const Dashboard = () => {
     const router = useRouter();
@@ -15,7 +16,7 @@ const Dashboard = () => {
         <div>
             <div>failed to load</div>
             <br />
-            first time loging in? try this <a className="text-blue-300"><Link href={`https://challengepointsapi.herokuapp.com/api/users/register/${router.query.id}/${router.query.t}`}>button</Link></a>!
+            first time loging in? try this <a className="text-blue-300"><Link href={`https://challengepointsapi.herokuapp.com/api/users/register/${router.query.id}/${cookie.Token}`}>button</Link></a>!
             <br />
             <br />
             <hr />
@@ -34,17 +35,17 @@ const Dashboard = () => {
             <br />
             <hr />
             <br />
-            <UserInfo id={router.query.id} config={data.config} username={data.username} token={router.query.t}/>
+            <UserInfo id={router.query.id} config={data.config} username={data.username} token={cookie.Token}/>
             <br />
             <hr />
             <br />
-            <Badges id={router.query.id} badges={data.badges} token={router.query.t}/>
+            <Badges id={router.query.id} badges={data.badges} token={cookie.Token}/>
             <br />
             <hr />
             <br />
             <h3>About Me</h3>
             <br />
-            <MarkdownEditor config={data.config} token={router.query.t} id={router.query.id}/>
+            <MarkdownEditor config={data.config} token={cookie.Token} id={router.query.id}/>
         </div>
     );
 };
