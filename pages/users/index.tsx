@@ -6,13 +6,13 @@ import styles from "../../styles/Users.module.css";
 
 export async function getStaticProps() {
 	//const data = await fetcher('https://challenge-points-dev.herokuapp.com/api/users/global/1')	// First API
-	const data = await fetcher('http://api.challengepoints.net/api/users/global/1')		// Second API
+	const data = await fetcher('https://api.challengepoints.net/api/users/global/1')		// Second API
 	return { props: { data } }
 }*/
 
 const Users = () => {
 	const fetcher = (url) => fetch(url).then((r) => r.json());
-    const { data, error } = useSWR(`http://api.challengepoints.net/api/users/global/1`, fetcher);
+    const { data, error } = useSWR(`https://api.challengepoints.net/api/users/global/1`, fetcher);
 
 	if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;

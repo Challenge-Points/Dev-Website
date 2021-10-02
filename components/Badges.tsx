@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Badges = (props) => {
 	const ApplyBadge = (BadgeType, props) => {
-		axios.get(`http://api.challengepoints.net/api/users/badges/${props.id}/update/${BadgeType}O/${props.token}`);
+		axios.get(`https://api.challengepoints.net/api/users/badges/${props.id}/update/${BadgeType}O/${props.token}`);
 	}
 	return (
 		<div>

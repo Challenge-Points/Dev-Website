@@ -16,7 +16,7 @@ const UserLeaderboard= (props) => {
             break;
     }
 
-    const { data, error } = useSWR(`http://api.challengepoints.net/api/${link}`, fetcher);
+    const { data, error } = useSWR(`https://api.challengepoints.net/api/${link}`, fetcher);
 
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;

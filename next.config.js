@@ -4,7 +4,7 @@ module.exports = {
 			beforeFiles: [
 				{
 					source: "/api/:url*",
-					destination: "http://api.challengepoints.net/api/",
+					destination: "https://api.challengepoints.net/api/",
 				},
 			],
 		};

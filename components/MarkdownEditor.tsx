@@ -30,8 +30,7 @@ const MarkdownEditor = (props) => {
         const data = {
             data: value
         };
-        //axios.post(`http://challenge-points-dev.herokuapp.com/api/users/aboutme/${props.id}/update/${props.token}`, data); // First API
-        axios.post(`http://challengepointsapi.herokuapp.com/api/users/aboutme/${props.id}/update/${props.token}`, data);      // Second API
+        axios.post(`https://api.challengepoints.net/api/users/aboutme/${props.id}/update/${props.token}`, data);
     };
 
     return (
