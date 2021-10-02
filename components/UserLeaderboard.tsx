@@ -16,8 +16,7 @@ const UserLeaderboard= (props) => {
             break;
     }
 
-    //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/${link}`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/${link}`, fetcher);      // Second API
+    const { data, error } = useSWR(`http://api.challengepoints.net/api/${link}`, fetcher);
 
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;

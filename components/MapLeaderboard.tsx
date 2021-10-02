@@ -8,8 +8,7 @@ const MapLeaderboard= (props) => {
     const fetcher = (url) => fetch(url).then((r) => r.json());
     var diff;
     if (props.diff == 'expert+') {diff = 'expertplus'} else {diff = props.diff};
-    //const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/maps/${props.hash}/scores/20/${page}`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/maps/mapscores/${props.hash}/${diff}/scores/20/${page}`, fetcher);      // Second API
+    const { data, error } = useSWR(`http://api.challengepoints.net/api/maps/mapscores/${props.hash}/${diff}/scores/20/${page}`, fetcher);      // Second API
     
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;

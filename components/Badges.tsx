@@ -3,8 +3,7 @@ import axios from "axios";
 
 const Badges = (props) => {
 	const ApplyBadge = (BadgeType, props) => {
-		//axios.get(`https://challenge-points-dev.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}/${props.token}`);	// First API
-		axios.get(`https://challengepointsapi.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}O/${props.token}`);		// Second API
+		axios.get(`http://api.challengepoints.net/api/users/badges/${props.id}/update/${BadgeType}O/${props.token}`);
 	}
 	return (
 		<div>

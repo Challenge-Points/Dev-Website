@@ -24,15 +24,13 @@ const UserInfo = (props) => {
     const ytid = (props.config.ytid ? `https://www.youtube.com/${props.config.ytid}`  : '');
 
     const fetcher = (url) => fetch(url).then((r) => r.json());
-	// const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/auth/key/get/${props.id}/${props.token}`, fetcher);  // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/auth/key/get/${props.id}/${props.token}`, fetcher);      // Second API
+	const { data, error } = useSWR(`http://api.challengepoints.net/api/auth/key/get/${props.id}/${props.token}`, fetcher);
     
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
 
     const newKey = () => {
-		// axios.get(`https://challenge-points-dev.herokuapp.com/api/users/badges/${props.id}/update/${BadgeType}/${props.token}`);	// First API
-		axios.get(`https://challengepointsapi.herokuapp.com/api/auth/key/generate/${props.id}/${props.token}`);		                // Second API
+		axios.get(`http://api.challengepoints.net/api/auth/key/generate/${props.id}/${props.token}`);
 	};
     const copyToClipboard = () => {
         clipboard.writeText(data.apikey);
@@ -50,7 +48,7 @@ const UserInfo = (props) => {
             twitterid: twitter.current.value,
             ytid: yt.current.value
         }
-        axios.post(`http://challengepointsapi.herokuapp.com/api/users/links/${props.id}/update/${props.token}`, data);      // Second API
+        axios.post(`http://api.challengepoints.net/api/users/links/${props.id}/update/${props.token}`, data);
     };
 
     return (

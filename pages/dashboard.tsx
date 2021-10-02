@@ -9,14 +9,13 @@ import cookie from "js-cookie";
 const Dashboard = () => {
     const router = useRouter();
     const fetcher = (url) => fetch(url).then((r) => r.json());
-	// const { data, error } = useSWR(`https://challenge-points-dev.herokuapp.com/api/users/${router.query.id}/data`, fetcher); // First API
-    const { data, error } = useSWR(`https://challengepointsapi.herokuapp.com/api/users/${router.query.id}/data`, fetcher);      // Second API
+    const { data, error } = useSWR(`http://api.challengepoints.net/api/users/${router.query.id}/data`, fetcher);
 
     if (error) return (
         <div>
             <div>failed to load</div>
             <br />
-            first time loging in? try this <a className="text-blue-300"><Link href={`https://challengepointsapi.herokuapp.com/api/users/register/${router.query.id}/${cookie.get('Token')}`}>button</Link></a>!
+            first time loging in? try this <a className="text-blue-300"><Link href={`http://api.challengepoints.net/api/users/register/${router.query.id}/${cookie.get('Token')}`}>button</Link></a>!
             <br />
             <br />
             <hr />

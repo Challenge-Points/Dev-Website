@@ -87,7 +87,7 @@ function doc() {
             <tbody>
                 <tr>
                     <td>
-                        <b><a href="https://challengepointsapi.herokuapp.com/api/maps/12c781a279bb0ee658b948e842d768224cffdbfc/expertPlus/scores/2/1">https://challengepointsapi.herokuapp.com/api/maps/12c781a279bb0ee658b948e842d768224cffdbfc/expertPlus/scores/2/1</a></b>
+                        <b><a href="http://api.challengepoints.net/api/maps/12c781a279bb0ee658b948e842d768224cffdbfc/expertPlus/scores/2/1">http://api.challengepoints.net/api/maps/12c781a279bb0ee658b948e842d768224cffdbfc/expertPlus/scores/2/1</a></b>
                     </td>
                 </tr>
             </tbody>
