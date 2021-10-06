@@ -16,7 +16,6 @@ const Users = () => {
 
 	if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
-	console.log(data[0])
 	return (
 		<div>
 			<h1>Users</h1>

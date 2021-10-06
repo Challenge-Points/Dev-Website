@@ -39,7 +39,7 @@ const Maps = () => {
                         name="Ferrari"
                         mapper="midddd"
                         cp="300"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="fcde"
                         index="1"
                     />
@@ -48,7 +48,7 @@ const Maps = () => {
                         name="Release the Kraken"
                         mapper="LOBSTERRR"
                         cp="260"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="121b0"
                         index="0"
                     />
@@ -57,7 +57,7 @@ const Maps = () => {
                         name="Terminal Missa"
                         mapper="Astrella"
                         cp="380"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="7cfe"
                         index="0"
                     />
@@ -66,7 +66,7 @@ const Maps = () => {
                         name="Evacuate the Mosphit"
                         mapper="fraies & Oddloop"
                         cp="200"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="4fc1"
                         index="1"
                     />
@@ -75,7 +75,7 @@ const Maps = () => {
                         name="hand crushed by a mallet"
                         mapper="Water"
                         cp="215"
-                        diff="expert"
+                        diff="Expert"
                         id="10bee"
                         index="0"
                     />
@@ -84,7 +84,7 @@ const Maps = () => {
                         name="Cherry Doll"
                         mapper="Mid"
                         cp="45"
-                        diff="expert"
+                        diff="Expert"
                         id="c4f8"
                         index="0"
                     />
@@ -93,7 +93,7 @@ const Maps = () => {
                         name="Cherry Doll"
                         mapper="Mid"
                         cp="385"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="c4f8"
                         index="1"
                     />
@@ -102,7 +102,7 @@ const Maps = () => {
                         name="Cheat Codes for Hoes"
                         mapper="FatBeanzoop"
                         cp="75"
-                        diff="normal"
+                        diff="Normal"
                         id="6fb1"
                         index="0"
                     />
@@ -111,7 +111,7 @@ const Maps = () => {
                         name="Pure Ruby"
                         mapper="CriminalCannoli"
                         cp="165"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="5f34"
                         index="0"
                     />
@@ -120,7 +120,7 @@ const Maps = () => {
                         name="system failure"
                         mapper="Saint"
                         cp="380"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="cec4"
                         index="0"
                     />
@@ -129,7 +129,7 @@ const Maps = () => {
                         name="Armageddon"
                         mapper="Water"
                         cp="500"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="d8d0"
                         index="0"
                     />
@@ -138,7 +138,7 @@ const Maps = () => {
                         name="NS22"
                         mapper="Bananentropfen"
                         cp="540"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="8ab5"
                         index="0"
                     />
@@ -147,7 +147,7 @@ const Maps = () => {
                         name="Guardian of the Former Seas"
                         mapper="Salad"
                         cp="180"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="10fb5"
                         index="1"
                     />
@@ -156,7 +156,7 @@ const Maps = () => {
                         name="Coconut Mall"
                         mapper="Water"
                         cp="360"
-                        diff="expertPlus"
+                        diff="ExpertPlus"
                         id="10945"
                         index="0"
                     />

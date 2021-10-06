@@ -20,8 +20,7 @@ const Map = () => {
     if (error) return <div>failed to load</div>;
     if (!data) return <div>loading...</div>;
     
-    var diff = router.query.diff;
-    if (diff == "expertPlus") {diff = "expert+"}
+    var diff = ((router.query.diff == 'Expert+') ? 'expertplus' : router.query.diff)
 
     var i;
     data.difficulties.map((diffdata) => {
@@ -39,7 +38,7 @@ const Map = () => {
                     <button title="Copy !bsr" className="btn">!</button>
                     <a href={`https://beatsaver.com/beatmap/${data.key}`}>
                     <button title="Beatsaver Link" className="btn">
-                        <Image src="/icons/BeatSaverLogo.png" alt="" height="30" width="30" className="btn_icon" />
+                        <Image src="/icons/BeatSaverLogo.png" alt="" height="20" width="20" className="btn_icon" />
                     </button>
                     </a>
                     <a href={`beatsaver://${data.key}`}>
