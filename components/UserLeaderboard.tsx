@@ -1,14 +1,16 @@
 import styles from "../styles/Users.module.css";
 import useSWR from "swr";
 import Link from "next/link";
+import React, { useState } from "react";
 
 const UserLeaderboard= (props) => {
+    const [page, pageSwitch] = useState(1);
     var link;
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const fetcher = (url) => fetch(url).then((r) => r.json());
     switch (props.type) {
         case "user":
-            link = `users/recentscores/${props.id}/scores/10`
+            link = `users/topscores/${props.id}/scores/10/${page}`
             break;
 
         case "recent":
@@ -59,6 +61,20 @@ const UserLeaderboard= (props) => {
                             </tr>
                         )
                     })}
+                    <tr>
+                        <td>
+                            <div className="pageleft">
+                                <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
+                            </div>
+                        </td>
+                        <td />
+                        <td />
+                        <td>
+                            <div className="pageright">
+                                <button onClick={() => pageSwitch(page + 1)}>^</button>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
             <hr />
