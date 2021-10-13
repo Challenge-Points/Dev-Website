@@ -1,7 +1,15 @@
 import MapTable from "../../components/MapTabel";
 import styles from "../../styles/Users.module.css";
+import useSWR from "swr";
+import React, { useState } from "react";
 
 const Maps = () => {
+    const [page, pageSwitch] = useState(1);
+    const fetcher = (url) => fetch(url).then((r) => r.json());
+    const { data, error } = useSWR(`https://api.challengepoints.net/api/maps/all/${page}`, fetcher);
+
+    if (error) return <div>failed to load</div>;
+    if (!data) return <div>loading...</div>;
     return (
         <div>
             <h1>Maps</h1>
@@ -34,7 +42,25 @@ const Maps = () => {
                     </td>
                 </thead>
                 <tbody>
-                    <MapTable
+                    {data.map((key, index) => {
+                        return(
+                            key.difficulties.map((key2, index) => {
+                                console.log(key2)
+                                return (
+                                    <MapTable
+                                        hash={key.hash}
+                                        name={key.m_n}
+                                        diff={key2.d}
+                                        mapper={key.mr_n}
+                                        cp={key2.m_c}
+                                        id={key.key}
+                                        index={key?.i}
+                                    />
+                                )
+                            })
+                        )
+                    })}
+                    {/*<MapTable
                         hash="0343313f585c228c0fd4daf3ae976a491a184f20"
                         name="Ferrari"
                         mapper="midddd"
@@ -159,7 +185,21 @@ const Maps = () => {
                         diff="ExpertPlus"
                         id="10945"
                         index="0"
-                    />
+                    />*/}
+                    <tr>
+                        <td>
+                            <div className="pageleft">
+                                <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
+                            </div>
+                        </td>
+                        <td />
+                        <td />
+                        <td>
+                            <div className="pageright">
+                                <button onClick={() => pageSwitch(page + 1)}>^</button>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

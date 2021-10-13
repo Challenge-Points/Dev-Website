@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const MapTable = (props) => {
     var Cover = "/maps/" + props.hash + ".jpg";
-    var diff = ((props.diff.toLowerCase() == 'expert+') ? 'expertplus' : props.diff)
+    var diff = ((props.diff == 'expert+') ? 'expertplus' : props.diff)
     console.log(diff)
     var URL = `/maps/map?hash=${props.hash}&diff=${diff}`
     return (
