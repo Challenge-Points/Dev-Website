@@ -44,10 +44,11 @@ const Maps = () => {
                 <tbody>
                     {data.map((key, index) => {
                         return(
-                            key.difficulties.map((key2, index) => {
+                            key.difficulties.map((key2) => {
                                 console.log(key2)
                                 return (
                                     <MapTable
+                                        key={index}
                                         hash={key.hash}
                                         name={key.m_n}
                                         diff={key2.d}
