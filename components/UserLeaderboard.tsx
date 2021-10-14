@@ -14,7 +14,7 @@ const UserLeaderboard= (props) => {
             break;
 
         case "recent":
-            link = `users/recent/1`
+            link = `users/recent/${page}`
             break;
     }
 
