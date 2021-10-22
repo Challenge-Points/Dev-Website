@@ -2,9 +2,11 @@ import styles from "../styles/Users.module.css";
 import Link from "next/link";
 import useSWR from "swr";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const MapLeaderboard= (props) => {
     const [page, pageSwitch] = useState(1);
+    let history = useHistory();
     const fetcher = (url) => fetch(url).then((r) => r.json());
     var diff = ((props.diff.toLowerCase() == 'expert+') ? 'expertplus' : props.diff)
     const { data, error } = useSWR(`https://api.challengepoints.net/api/maps/mapscores/${props.hash}/${diff}/scores/20/${page}`, fetcher);      // Second API
