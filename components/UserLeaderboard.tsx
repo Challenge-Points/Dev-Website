@@ -52,13 +52,15 @@ const UserLeaderboard= (props) => {
                         if (key['diff'] == 'expert+') { key['diff'] = 'expertplus'}
                         var date = new Date(unix * 1000)
                         return (
-                            <tr key={index}>
-                                <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
-                                <td data-label="Map" ><Link href={`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{key['name']}</a></Link></td>
-                                <td data-label="CP"><h4>{key['cp']}</h4></td>
-                                <td data-label="Score"><h4>{key['score']}</h4></td>
-                                <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
-                            </tr>
+                            <Link href={`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">
+                                <tr key={index}>
+                                    <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
+                                    <td data-label="Map" >{key['name']}</td>
+                                    <td data-label="CP"><h4>{key['cp']}</h4></td>
+                                    <td data-label="Score"><h4>{key['score']}</h4></td>
+                                    <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
+                                </tr>
+                            </a></Link>
                         )
                     })}
                     <tr>
