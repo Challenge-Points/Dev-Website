@@ -37,14 +37,26 @@ const MapLeaderboard= (props) => {
                 </thead>
                 <tbody>
                 {keys.map((key, index) => {
+                    if (index % 2 == 0) {
                         return (
-                            <tr key={index}>
-                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{index + 1}</a></Link></td>
-                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].username}</a></Link></td>
-                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].cp}</a></Link></td>
-                                <td><Link href={`../../users/${data[key].user_id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{data[key].score}</a></Link></td>
+                            <tr onClick={() => history.push(`../../users/${data[key].user_id}`)} key={index} className="p-2 px-3 bg-blue-700 bg-opacity-5 hover:bg-opacity-10 rounded">
+                                <td>{index + 1}</td>
+                                <td>{data[key].username}</td>
+                                <td>{data[key].cp}</td>
+                                <td>{data[key].score}</td>
                             </tr>
                         )
+                    }
+                    else {
+                        return (
+                            <tr onClick={() => history.push(`../../users/${data[key].user_id}`)} key={index} className="p-2 px-3 bg-blue-500 bg-opacity-5 hover:bg-opacity-10 rounded">
+                                <td>{index + 1}</td>
+                                <td>{data[key].username}</td>
+                                <td>{data[key].cp}</td>
+                                <td>{data[key].score}</td>
+                            </tr>
+                        )
+                    }
                     })}
                     <tr>
                         <td>

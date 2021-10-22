@@ -14,6 +14,7 @@ module.exports = {
 		domains: [
 			"beatsaver.com",
 			"scoresaber.com",
+			"cdn.challengepoints.net",
 		],
 	},
 };
