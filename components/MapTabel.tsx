@@ -8,7 +8,8 @@ const MapTable = (props) => {
     var URL = `/maps/map?hash=${props.hash}&diff=${diff}`
     return (
         <>
-            <tr>
+            <tr onClick={() => window.location.href=`${URL}`} className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded cursor-pointer">
+                <td />
                 <td>
                     <div>
                         <Image
@@ -21,26 +22,25 @@ const MapTable = (props) => {
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}>
-                            <a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{props.name}</a>
-                        </Link>
+                        {props.name}
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{props.mapper}</a></Link>
+                        {props.mapper}
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{`${props.cp} CP`}</a></Link>
+                        {`${props.cp} CP`}
                     </div>
                 </td>
                 <td>
                     <div className="margin-left-20">
-                        <Link href={`${URL}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">{diff}</a></Link>
+                        {diff}
                     </div>
                 </td>
+                <td />
             </tr>
         </>
     );

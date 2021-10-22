@@ -2,11 +2,12 @@ import styles from "../styles/Users.module.css";
 import Link from "next/link";
 import useSWR from "swr";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
-const MapLeaderboard= (props) => {
+const MapLeaderboard = (props) => {
+    const history = useHistory();
     const [page, pageSwitch] = useState(1);
-    let history = useHistory();
+    console.log(history)
     const fetcher = (url) => fetch(url).then((r) => r.json());
     var diff = ((props.diff.toLowerCase() == 'expert+') ? 'expertplus' : props.diff)
     const { data, error } = useSWR(`https://api.challengepoints.net/api/maps/mapscores/${props.hash}/${diff}/scores/20/${page}`, fetcher);      // Second API
@@ -23,39 +24,45 @@ const MapLeaderboard= (props) => {
             <table className={styles.userTable}>
                 <thead>
                     <tr>
-                        <td>
+                        <th scope="col" />
+                        <th scope="col">
                             <b>#</b>
-                        </td>
-                        <td>
+                        </th>
+                        <th scope="col">
                             <b>Username</b>
-                        </td>
-                        <td>
+                        </th>
+                        <th scope="col">
                             <b>CP</b>
-                        </td>
-                        <td>
+                        </th>
+                        <th scope="col">
                             <b>Score</b>
-                        </td>
+                        </th>
+                        <th scope="col" />
                     </tr>
                 </thead>
                 <tbody>
                 {keys.map((key, index) => {
                     if (index % 2 == 0) {
                         return (
-                            <tr onClick={() => history.push(`../../users/${data[key].user_id}`)} key={index} className="p-2 px-3 bg-blue-700 bg-opacity-5 hover:bg-opacity-10 rounded">
+                            <tr onClick={() => window.location.href=`../../users/${data[key].user_id}`} key={index} className="p-2 px-3 rounded bg-blue-900 bg-opacity-50 hover:bg-white hover:bg-opacity-10 cursor-pointer">
+                                <td />
                                 <td>{index + 1}</td>
                                 <td>{data[key].username}</td>
                                 <td>{data[key].cp}</td>
                                 <td>{data[key].score}</td>
+                                <td />
                             </tr>
                         )
                     }
                     else {
                         return (
-                            <tr onClick={() => history.push(`../../users/${data[key].user_id}`)} key={index} className="p-2 px-3 bg-blue-500 bg-opacity-5 hover:bg-opacity-10 rounded">
+                            <tr onClick={() => window.location.href=`../../users/${data[key].user_id}`} key={index} className="p-2 px-3 rounded bg-opacity-50 hover:bg-white hover:bg-opacity-10 cursor-pointer">
+                                <td />
                                 <td>{index + 1}</td>
                                 <td>{data[key].username}</td>
                                 <td>{data[key].cp}</td>
                                 <td>{data[key].score}</td>
+                                <td />
                             </tr>
                         )
                     }
@@ -66,6 +73,8 @@ const MapLeaderboard= (props) => {
                                 <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
                             </div>
                         </td>
+                        <td />
+                        <td />
                         <td />
                         <td />
                         <td>

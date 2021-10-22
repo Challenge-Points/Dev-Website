@@ -31,6 +31,7 @@ const UserLeaderboard= (props) => {
             <table className={styles.userTable}>
                 <thead>
                     <tr>
+                        <th scope="col" />
                         <th scope="col">
                             <b>#</b>
                         </th>
@@ -46,6 +47,7 @@ const UserLeaderboard= (props) => {
                         <th scope="col">
                             <b>Time</b>
                         </th>
+                        <th scope="col" />
                     </tr>
                 </thead>
                 <tbody>
@@ -53,15 +55,32 @@ const UserLeaderboard= (props) => {
                         var unix = key['time']
                         if (key['diff'] == 'expert+') { key['diff'] = 'expertplus'}
                         var date = new Date(unix * 1000)
-                        return (
-                            <tr onClick={() => history.push(`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`)} key={index} className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">
-                                <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
-                                <td data-label="Map" >{key['name']}</td>
-                                <td data-label="CP"><h4>{key['cp']}</h4></td>
-                                <td data-label="Score"><h4>{key['score']}</h4></td>
-                                <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
-                            </tr>
-                        )
+                        if (index % 2 == 0) {
+                            return (
+                                <tr onClick={() => window.location.href=`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`} key={index} className="p-2 px-3 rounded bg-blue-900 bg-opacity-25 hover:bg-white hover:bg-opacity-10 cursor-pointer">
+                                    <td />
+                                    <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
+                                    <td data-label="Map" >{key['name']}</td>
+                                    <td data-label="CP"><h4>{key['cp']}</h4></td>
+                                    <td data-label="Score"><h4>{key['score']}</h4></td>
+                                    <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
+                                    <td />
+                                </tr>
+                            )
+                        }
+                        else {
+                            return (
+                                <tr onClick={() => window.location.href=`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`} key={index} className="p-2 px-3 rounded bg-opacity-25 hover:bg-white hover:bg-opacity-10 cursor-pointer">
+                                    <td />
+                                    <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
+                                    <td data-label="Map" >{key['name']}</td>
+                                    <td data-label="CP"><h4>{key['cp']}</h4></td>
+                                    <td data-label="Score"><h4>{key['score']}</h4></td>
+                                    <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
+                                    <td />
+                                </tr>
+                            ) 
+                        }
                     })}
                     <tr>
                         <td>
@@ -69,6 +88,9 @@ const UserLeaderboard= (props) => {
                                 <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
                             </div>
                         </td>
+                        <td />
+                        <td />
+                        <td />
                         <td />
                         <td />
                         <td>

@@ -15,6 +15,7 @@ const Maps = () => {
             <h1>Maps</h1>
             <table className={styles.userTable}>
                 <thead>
+                    <td />
                     <td>
                         <div className="margin-left-20">
                             <b> </b>
@@ -40,6 +41,7 @@ const Maps = () => {
                             <b> Diff </b>
                         </div>
                     </td>
+                    <td />
                 </thead>
                 <tbody>
                     {data.map((key, index) => {
@@ -67,6 +69,9 @@ const Maps = () => {
                                 <button onClick={() => pageSwitch((page != 1) ? page - 1 : page)}>^</button>
                             </div>
                         </td>
+                        <td />
+                        <td />
+                        <td />
                         <td />
                         <td />
                         <td>

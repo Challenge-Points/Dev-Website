@@ -34,10 +34,10 @@ const Users = () => {
 				<tbody>
 					{data.map((user) => {
 						return (
-							<tr key={user.id}>
-								<td><Link href={`/users/${user.id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded"> {user.global.toString()} </a></Link></td>
-								<td><Link href={`/users/${user.id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded"> {user.username} </a></Link></td>
-								<td><Link href={`/users/${user.id}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded"> {user.cp.toString()} </a></Link></td>
+							<tr onClick={() => window.location.href=`/users/${user.id}`} key={user.id} className="p-2 px-3 rounded bg-white bg-opacity-0 hover:bg-opacity-10 cursor-pointer">
+								<td>{user.global.toString()}</td>
+								<td>{user.username}</td>
+								<td>{user.cp.toString()}</td>
 							</tr>
 						);
 					})}
