@@ -2,9 +2,11 @@ import styles from "../styles/Users.module.css";
 import useSWR from "swr";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 const UserLeaderboard= (props) => {
     const [page, pageSwitch] = useState(1);
+    let history = useHistory();
     var link;
     const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
     const fetcher = (url) => fetch(url).then((r) => r.json());
@@ -52,14 +54,12 @@ const UserLeaderboard= (props) => {
                         if (key['diff'] == 'expert+') { key['diff'] = 'expertplus'}
                         var date = new Date(unix * 1000)
                         return (
-                            <tr key={index}>
-                                <Link href={`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`}><a className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">
-                                    <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
-                                    <td data-label="Map" >{key['name']}</td>
-                                    <td data-label="CP"><h4>{key['cp']}</h4></td>
-                                    <td data-label="Score"><h4>{key['score']}</h4></td>
-                                    <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
-                                </a></Link>
+                            <tr onClick={() => history.push(`/maps/map?hash=${key['map_hash']}&diff=${key['diff']}`)} key={index} className="p-2 px-3 bg-white bg-opacity-0 hover:bg-opacity-10 rounded">
+                                <td scope="row" data-label="#"><h4>{String(index + 1)}</h4></td>
+                                <td data-label="Map" >{key['name']}</td>
+                                <td data-label="CP"><h4>{key['cp']}</h4></td>
+                                <td data-label="Score"><h4>{key['score']}</h4></td>
+                                <td data-label="Time"><h4>{date.getDate() + '-' + months[date.getMonth()] + '-' + date.getFullYear()}</h4></td>
                             </tr>
                         )
                     })}
