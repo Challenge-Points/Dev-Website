@@ -5,7 +5,8 @@
 	"scripts": {
 		"dev": "npx patch-package && next dev",
 		"build": "rm -rf .next && npx patch-package && next build",
-		"start": "NODE_ENV=production pm2 start server.js",
+		"startpm2": "NODE_ENV=production pm2 start server.js",
+		"start": "NODE_ENV=production node server.js",
 		"lint": "next lint"
 	},
 	"dependencies": {
